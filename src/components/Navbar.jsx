@@ -1,12 +1,13 @@
-import React, {useState, useEffect, use} from 'react';
-import logo1 from '../assets/logo1.png';
+import { Link } from "react-router-dom";
+import React, { useState, useEffect, use } from "react";
+import logo1 from "../assets/logo1.png";
 import {
   FaUserCircle,
   FaInstagram,
   FaShoppingCart,
   FaAngleDown,
-} from 'react-icons/fa';
-import { IoMenu } from 'react-icons/io5';
+} from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
@@ -14,37 +15,40 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsTop(window.scrollY < 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-
   }, []);
 
   const openMobileMenu = () => {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.style.display = 'block';
-    mobileMenu.style.transform = 'translateX(0)';
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.style.display = "block";
+    mobileMenu.style.transform = "translateX(0)";
   };
   const closeMobileMenu = () => {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.style.display = 'none';
-    mobileMenu.style.transform = 'translateX(-100%)';
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.style.display = "none";
+    mobileMenu.style.transform = "translateX(-100%)";
   };
   const openSareeDropdown = () => {
-    const sareeDropdown = document.getElementById('SareeDropdown');
-    sareeDropdown.style.display = 'block';
-    sareeDropdown.style.transform = 'translateX(0)';
+    const sareeDropdown = document.getElementById("SareeDropdown");
+    sareeDropdown.style.display = "block";
+    sareeDropdown.style.transform = "translateX(0)";
   };
   const closeSareeDropdown = () => {
-    const sareeDropdown = document.getElementById('SareeDropdown');
-    sareeDropdown.style.display = 'none';
-    sareeDropdown.style.transform = 'translateX(-100%)';
+    const sareeDropdown = document.getElementById("SareeDropdown");
+    sareeDropdown.style.display = "none";
+    sareeDropdown.style.transform = "translateX(-100%)";
   };
   return (
-    <header className={`fixed top-0 left-0 right-0 z-1 ${isTop ? 'shadow-none' : 'shadow-lg bg-white/80 backdrop-blur-md '} transition-shadow duration-300`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-1 ${
+        isTop ? "shadow-none" : "shadow-lg bg-white/80 backdrop-blur-md "
+      } transition-shadow duration-300`}
+    >
       <div className="flex md:hidden justify-center bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) py-2 px-6 sm:px-10 text-[0.9rem] border-none items-center">
         <span className="animate-pulse tracking-wider text-center">
           🚚 FREE SHIPPING AVAILABLE FOR ORDERS WITHIN INDIA!!
@@ -64,10 +68,10 @@ const Navbar = () => {
         <div>
           <ul className="flex justify-between gap-4">
             <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <a href="#" className="flex justify-between gap-2">
+              <Link to="/login" className="flex justify-between gap-2">
                 <FaUserCircle className="h-5" />
                 <span className="tracking-wider">Profile</span>
-              </a>
+              </Link>
             </li>
             <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
               <a href="#" className="flex justify-between gap-2">

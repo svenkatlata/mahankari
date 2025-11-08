@@ -1,19 +1,19 @@
-import React, { useState, useEffect} from 'react';
-import OtpInput from "./OtpInput";
+import React, { useState, useEffect } from "react";
+import OtpInput from "../components/OtpInput";
 
 const Login = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [showOtpBtn, setShowOtpBtn] = useState(false);
   const [showOtpInput, setshowOtpInput] = useState(false);
   const [otpLength, setOtpLength] = useState(4);
 
   useEffect(() => {
-    document.getElementById('phoneNum').focus();
+    document.getElementById("phoneNum").focus();
   }, []);
 
   const handlePhoneNumChange = (e) => {
     const input = e.target.value;
-    const enteredNums = input.replace(/\D/g, '');
+    const enteredNums = input.replace(/\D/g, "");
     setPhoneNumber(enteredNums);
     setShowOtpBtn(enteredNums.length === 10);
   };
@@ -25,12 +25,10 @@ const Login = () => {
 
   const handleBackClick = () => {
     setshowOtpInput(false);
-    setPhoneNumber('');
+    setPhoneNumber("");
     setShowOtpBtn(false);
-    document.getElementById('phoneNum').focus();
-  }
-
-
+    document.getElementById("phoneNum").focus();
+  };
 
   // const [mobile, setMobile] = useState('');
   // const [otpBtnVisibility, setOtpBtnVisibility] = useState(false);
@@ -78,7 +76,7 @@ const Login = () => {
                     name="phoneNumCode"
                     maxLength={4}
                     disabled
-                    value={'+91'}
+                    value={"+91"}
                     className="block w-18 rounded-md bg-gray-300/5 p-4 text-base outline-1 -outline-offset-1 outline-(--color-primary)/20 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-(--color-primary) focus:bg-white/5 sm:text-base/6 text-center"
                   />
                   <input
@@ -105,15 +103,15 @@ const Login = () => {
                   Get OTP
                 </button>
                 <p className="text-center text-sm text-(--color-primary) sm:mx-auto sm:w-full sm:max-w-sm py-4">
-                  *We recommend using your{' '}
+                  *We recommend using your{" "}
                   <span className="font-bold">WhatsApp</span> number to Sign up
                   or Login so we can share order updates with you. By proceeding
                   you confirm that you are above 18 years of age and agree to
-                  the{' '}
+                  the{" "}
                   <a href="#" className="font-bold">
                     Privacy Policy
-                  </a>{' '}
-                  and{' '}
+                  </a>{" "}
+                  and{" "}
                   <a href="#" className="font-bold">
                     Terms of Use
                   </a>
