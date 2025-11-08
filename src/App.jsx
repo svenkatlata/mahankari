@@ -6,9 +6,10 @@ import Login from './components/Login';
 const App = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <Home />
-      {/* <Login /> */}
+      <Login /> */}
+      Hiii
     </>
   );
 };
