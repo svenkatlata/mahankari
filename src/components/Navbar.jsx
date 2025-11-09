@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
-import React, { useState, useEffect, use } from "react";
-import logo1 from "../assets/logo1.png";
+import { Link } from 'react-router-dom';
+import React, { useState, useEffect, use } from 'react';
+import logo1 from '../assets/logo1.png';
 import {
   FaUserCircle,
   FaInstagram,
   FaShoppingCart,
   FaAngleDown,
-} from "react-icons/fa";
-import { IoMenu } from "react-icons/io5";
+} from 'react-icons/fa';
+import { IoMenu } from 'react-icons/io5';
 
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
@@ -15,38 +15,38 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsTop(window.scrollY < 50);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const openMobileMenu = () => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenu.style.display = "block";
-    mobileMenu.style.transform = "translateX(0)";
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.style.display = 'block';
+    mobileMenu.style.transform = 'translateX(0)';
   };
   const closeMobileMenu = () => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenu.style.display = "none";
-    mobileMenu.style.transform = "translateX(-100%)";
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.style.display = 'none';
+    mobileMenu.style.transform = 'translateX(-100%)';
   };
   const openSareeDropdown = () => {
-    const sareeDropdown = document.getElementById("SareeDropdown");
-    sareeDropdown.style.display = "block";
-    sareeDropdown.style.transform = "translateX(0)";
+    const sareeDropdown = document.getElementById('SareeDropdown');
+    sareeDropdown.style.display = 'block';
+    sareeDropdown.style.transform = 'translateX(0)';
   };
   const closeSareeDropdown = () => {
-    const sareeDropdown = document.getElementById("SareeDropdown");
-    sareeDropdown.style.display = "none";
-    sareeDropdown.style.transform = "translateX(-100%)";
+    const sareeDropdown = document.getElementById('SareeDropdown');
+    sareeDropdown.style.display = 'none';
+    sareeDropdown.style.transform = 'translateX(-100%)';
   };
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-1 ${
-        isTop ? "shadow-none" : "shadow-lg bg-white/80 backdrop-blur-md "
+        isTop ? 'shadow-none' : 'shadow-lg bg-white/80 backdrop-blur-md '
       } transition-shadow duration-300`}
     >
       <div className="flex md:hidden justify-center bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) py-2 px-6 sm:px-10 text-[0.9rem] border-none items-center">
@@ -83,17 +83,17 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex bg-(--color-primary) p-4 sm:px-10 justify-between items-center text-(--color-secondary)">
-        <a href="#">
+        <Link to="/">
           <img src={logo1} alt="Mahankari" className="h-20" />
-        </a>
+        </Link>
 
         <nav className="relative">
           {/* Desktop Menu */}
           <ul className="hidden lg:flex justify-between gap-8">
             <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <a href="#" className="tracking-wider">
+              <Link to="/" className="tracking-wider">
                 HOME
-              </a>
+              </Link>
             </li>
             <li className="relative group hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
               <a
@@ -146,9 +146,9 @@ const Navbar = () => {
               </a>
             </li>
             <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <a href="#" className="tracking-wider">
+              <Link to="/contact" className="tracking-wider">
                 CONTACT
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="flex lg:hidden hover:text-(--color-accent)">
@@ -166,12 +166,12 @@ const Navbar = () => {
               id="mobile-menu"
               className="right-0 top-full hidden w-60 flex-col bg-(--color-primary) text-(--color-secondary) shadow-lg z-50 group-hover:flex p-2 absolute"
             >
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
               >
                 HOME
-              </a>
+              </Link>
               <a
                 href="#"
                 className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
@@ -219,12 +219,12 @@ const Navbar = () => {
               >
                 DUPATTAS
               </a>
-              <a
-                href="#"
+              <Link
+                to="/contact"
                 className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
               >
                 CONTACT
-              </a>
+              </Link>
             </div>
           </div>
         </nav>

@@ -143,7 +143,7 @@ const products = [
 ];
 
 const newArrivals = [
-  {...item26}
+  ...item26
 ];
 
 export { products, newArrivals };
