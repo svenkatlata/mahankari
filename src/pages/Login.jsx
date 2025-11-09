@@ -52,10 +52,10 @@ const Login = () => {
   // };
 
   return (
-    <section className="pt-40">
-      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <section className="bg-gray-50 min-h-screen flex flex-col items-center justify-start px-6 py-16">
+      <div className="flex min-h-full flex-col justify-center max-w-3xl w-full bg-white shadow-lg rounded-2xl p-8 md:p-12">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h1 className="py-10 text-center text-4xl/9 text-(--color-primary)">
+          <h1 className="pb-10 text-3xl tracking-wider fond-semibold text-center">
             Login
           </h1>
         </div>
@@ -65,7 +65,7 @@ const Login = () => {
               <div>
                 <label
                   htmlFor="phoneNum"
-                  className="block py-4 text-lg text-(--color-primary) font-medium"
+                  className="block py-4 text-lg font-medium"
                 >
                   Enter phone number
                 </label>
@@ -102,7 +102,7 @@ const Login = () => {
                 >
                   Get OTP
                 </button>
-                <p className="text-center text-sm text-(--color-primary) sm:mx-auto sm:w-full sm:max-w-sm py-4">
+                <p className="text-center text-sm sm:mx-auto sm:w-full sm:max-w-sm py-4">
                   *We recommend using your{" "}
                   <span className="font-bold">WhatsApp</span> number to Sign up
                   or Login so we can share order updates with you. By proceeding
@@ -120,7 +120,7 @@ const Login = () => {
               </div>
             </form>
           ) : (
-            <OtpInput otpLength={otpLength} handleBackClick={handleBackClick} />
+            <OtpInput otpLength={otpLength} handleBackClick={handleBackClick} phoneNumber={phoneNumber} />
           )}
         </div>
         {/* {onOtpBtn && renderOTP()} */}

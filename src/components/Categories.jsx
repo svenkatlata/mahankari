@@ -26,7 +26,7 @@ const Categories = () => {
           SAREE COLLECTIONS
         </h1>
         {/* Category Card */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-20">
           {categories.map((category) => (
             <div
               key={category.id}
@@ -36,12 +36,18 @@ const Categories = () => {
                 <img
                   src={category.image}
                   alt={category.title}
-                  className="object-cover rounded"
+                  className="object-cover rounded-t-lg"
                 />
                 <h2 className="text-lg font-medium p-4">{category.title}</h2>
               </a>
             </div>
           ))}
+        </div>
+        {/* View All Button */}
+        <div className="flex justify-center mt-12">
+          <button className="bg-(--color-primary) hover:bg-(--color-topbar) text-white font-medium py-3 px-8 transition">
+            View All
+          </button>
         </div>
       </div>
     </section>

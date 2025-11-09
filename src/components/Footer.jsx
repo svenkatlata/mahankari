@@ -14,12 +14,17 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
         {/* Column 1 — Brand Info */}
         <div>
-          <h2 className="text-2xl font-semibold text-white mb-4">
+          <h3 className="text-2xl font-medium text-white mb-4">
             Mahankari Threads & Tales
-          </h2>
+          </h3>
           <p className="text-gray-400">
-            Celebrating India’s timeless handloom artistry. Each saree we create
-            tells a story of tradition, craftsmanship, and love.
+            We celebrate India's handloom heritage by supporting local artisans and promoting sustainable, vegan clothing alternatives.
+            </p>
+          <p className="text-gray-400">  
+      Each saree brought to you blends tradition, craftsmanship, and conscious fashion — 
+          </p>
+          <p className="text-gray-400">
+          keeping our culture alive, one weave at a time.
           </p>
         </div>
 
@@ -67,11 +72,11 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-3 py-2 rounded-l-md text-gray-800 focus:outline-none"
+              className="flex-1 px-3 bg-(--color-secondary) py-2 rounded-l-lg text-gray-800 focus:outline-none"
             />
             <button
               type="submit"
-              className="bg-(--color-secondary) hover:bg-(--color-secondary) text-(--color-primary) px-4 py-2 rounded-md font-medium transition"
+              className="bg-(--color-secondary) hover:bg-(--color-secondary) text-(--color-primary) px-4 py-2 rounded-r-lg font-medium transition"
             >
               Subscribe
             </button>

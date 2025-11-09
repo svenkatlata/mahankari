@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 const AccountOverview = () => {
+  const location = useLocation();
+  const { phoneNumber } = location.state || {};
+
   const items = [
     {
       title: "Your Orders",
@@ -9,29 +13,29 @@ const AccountOverview = () => {
       link: "/orders",
     },
     {
-      title: "Login & security",
-      description: "Edit login, name, and mobile number",
-      icon: "🔒",
-      link: "/login-security",
+      title: "Your Wishlist",
+      description: "View and manage your saved items",
+      icon: "💖",
+      link: "/wishlist",
     },
     {
-      title: "Your Addresses",
+      title: "Saved Addresses",
       description: "Edit addresses for orders and gifts",
       icon: "📍",
       link: "/addresses",
     },
     {
-      title: "Your business account",
-      description:
-        "Sign up for free to save up to 18% with GST invoice and bulk discounts and purchase on credit.",
-      icon: "💼",
-      link: "/business-account",
+      title: "Profile Settings",
+      description: "Edit login, name, and mobile number",
+      icon: "🔒",
+      link: "/profile-settings",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-10 px-4 pt-40">
-      <h1 className="text-2xl font-semibold mb-8">Your Account</h1>
+    <div className="min-h-screen bg-linear-to-b from-pink-50 via-white to-blue-50 flex flex-col items-center py-20 px-4">
+      <h1 className="text-3xl font-medium">Your Account</h1>
+      <span className="mt-2 mb-10 text-gray-600">{phoneNumber}</span>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl w-full">
         {items.map((item) => (
