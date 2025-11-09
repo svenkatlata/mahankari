@@ -30,7 +30,7 @@ const Categories = () => {
           {categories.map((category) => (
             <div
               key={category.id}
-              className="border-none bg-(--color-primary) rounded-lg hover:shadow-lg transition-shadow duration-300 text-(--color-secondary)"
+              className="border-none bg-(--color-primary) rounded-lg hover:scale-102 transition-transform duration-500 text-(--color-secondary)"
             >
               <a href="#" className="cursor-pointer">
                 <img

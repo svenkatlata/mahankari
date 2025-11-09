@@ -12,7 +12,7 @@ function generateItems(code, productName, category, fabric, stock, mrp, price) {
   const quantity = stock.map((item) => item.qty);
   const count = colours.length;
   return subcodes.slice(0, count).map((subcode, idx) => ({
-    id: `${code}/${subcode}`,
+    id: `${code}-${subcode}`,
     product: productName,
     category: category,
     fabric: fabric,
@@ -39,10 +39,10 @@ const item25 = generateItems(
   '25SC6',
   'Rainbow Saree',
   'Bengal Soft Cotton Sarees',
-  'Malai Cotton',
+  'Bengal Soft Cotton',
   stock25,
-  950,
-  750
+  '950',
+  '750'
 );
 
 const stock26 = [
@@ -161,9 +161,9 @@ const item29 = generateItems(
   'Kalamkari Cotton Saree',
   'Handloom Cotton Sarees',
   '120 Count Pure Cotton',
-  stock28,
-  1050,
-  850
+  stock29,
+  '1,050',
+  '850'
 );
 
 const stock30 = [
@@ -184,8 +184,8 @@ const item30 = generateItems(
   'Chennur Silk Sarees',
   'Chennur Silk',
   stock30,
-  2400,
-  2200
+  '2,400',
+  '2,200'
 );
 
 const stock31 = [
@@ -202,8 +202,8 @@ const item31 = generateItems(
   'Pen Kalamkari Lehengas',
   'Chennur Silk',
   stock31,
-  2250,
-  2050
+  '2,250',
+  '2,050'
 );
 
 const stock32 = [
@@ -216,8 +216,8 @@ const item32 = generateItems(
   'Unstiched Dress Material',
   'Georgette',
   stock32,
-  1950,
-  1750
+  '1,950',
+  '1,750'
 );
 
 const stock33 = [
@@ -231,8 +231,8 @@ const item33 = generateItems(
   'Unstiched Dress Material',
   'Georgette',
   stock33,
-  1650,
-  1450
+  '1,650',
+  '1,450'
 );
 
 const stock34 = [
@@ -248,8 +248,8 @@ const item34 = generateItems(
   'Unstiched Dress Material',
   'Kota Cotton',
   stock34,
-  1650,
-  1450
+  '1,650',
+  '1,450'
 );
 
 const products = [
@@ -267,7 +267,24 @@ const products = [
   },
 ];
 
-const newArrivals = [...item26];
+const trending = [...item26];
+const newArrivals = [...item31];
 const exclusive = [...item32, ...item33, ...item34];
 
-export { products, newArrivals, exclusive };
+const chennurSilkSarees = [...item30];
+const kotaDoriyaSarees = [...item27];
+const malaiCottonSarees = [...item28];
+const handloomCottonSarees = [...item29];
+const bengalSoftCottonSarees = [...item25, ...item26];
+
+export {
+  products,
+  trending,
+  newArrivals,
+  exclusive,
+  chennurSilkSarees,
+  kotaDoriyaSarees,
+  malaiCottonSarees,
+  handloomCottonSarees,
+  bengalSoftCottonSarees,
+};
