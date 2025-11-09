@@ -13,7 +13,7 @@ body {
     color: #1e2939;
 }
 
-h1, h2{
+h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--color-primary);
 }
