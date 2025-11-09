@@ -49,12 +49,12 @@ const Navbar = () => {
         isTop ? 'shadow-none' : 'shadow-lg bg-white/80 backdrop-blur-md '
       } transition-shadow duration-300`}
     >
-      <div className="flex md:hidden justify-center bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) py-2 px-6 sm:px-10 text-[0.9rem] border-none items-center">
+      <div className="flex md:hidden justify-center bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) px-6 sm:px-10 text-[0.9rem] border-none items-center">
         <span className="animate-pulse tracking-wider text-center">
           🚚 FREE SHIPPING AVAILABLE FOR ORDERS WITHIN INDIA!!
         </span>
       </div>
-      <div className="flex justify-between bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) py-2 px-6 sm:px-10 text-[0.9rem] border-none items-center">
+      <div className="flex justify-between bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) px-6 sm:px-10 text-[0.9rem] border-none items-center">
         <a
           href="https://www.instagram.com/mahankari.hyd/"
           className="flex justify-between gap-2"
@@ -82,9 +82,9 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className="flex bg-(--color-primary) p-4 sm:px-10 justify-between items-center text-(--color-secondary)">
+      <div className="flex bg-(--color-primary) px-4 py-3 sm:px-10 justify-between items-center text-(--color-secondary)">
         <Link to="/">
-          <img src={logo1} alt="Mahankari" className="h-20" />
+          <img src={logo1} alt="Mahankari" className="h-18" />
         </Link>
 
         <nav className="relative">

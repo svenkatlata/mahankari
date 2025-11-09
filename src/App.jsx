@@ -12,6 +12,7 @@ export default function App() {
   return (
     <Router>
       <NavBar />
+      <div className="pt-31"></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

@@ -1,13 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 
-const OtpInput = ({ otpLength = 4, handleBackClick }) => {
+const OtpInput = ({ otpLength = 4, handleBackClick, phoneNumber }) => {
   const [otp, setOtp] = useState(new Array(otpLength).fill(''));
   const [showContinueBtn, setShowContinueBtn] = useState(false);
   const [globIndex, setGlobIndex] = useState(0);
   const inputRefs = useRef([]);
   const [timeLeft, setTimeLeft] = useState(60); // seconds
   const [isActive, setIsActive] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Focus the first input when component mounts
@@ -71,7 +73,8 @@ const OtpInput = ({ otpLength = 4, handleBackClick }) => {
 
   const handleOtpSubmit = (e) => {
     e.preventDefault();
-    alert('OTP Submitted: ' + otp.join(''));
+    // alert('OTP Submitted: ' + otp.join(''));
+    navigate('/dashboard', { state: { phoneNumber } });
   };
 
   return (
@@ -80,14 +83,14 @@ const OtpInput = ({ otpLength = 4, handleBackClick }) => {
         <div>
           <a
             href="#"
-            className="inline-flex justify-around gap-2 text-(--color-primary) font-sm items-center"
+            className="inline-flex justify-around gap-2 font-sm items-center"
           >
             <FaArrowLeft className="h-4" />{' '}
             <span onClick={handleBackClick}>Back</span>
           </a>
           <label
             htmlFor={`otp-${globIndex}`}
-            className="block py-4 text-lg text-(--color-primary) font-medium"
+            className="block py-4 text-lg font-medium"
           >
             Enter OTP
           </label>
@@ -111,7 +114,7 @@ const OtpInput = ({ otpLength = 4, handleBackClick }) => {
               );
             })}
           </div>
-          <div className="mt-5 font-base text-(--color-primary)">
+          <div className="mt-5 font-base">
             {isActive ? (
               <p>
                 Resend OTP in <strong>{formatTime(timeLeft)}</strong>

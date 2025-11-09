@@ -57,12 +57,12 @@ const stock26 = [
 ];
 const item26 = generateItems(
   '26SC8',
-  'Sunflower Saree',
+  'Hand-Painted Sunflower Print Trendy Saree',
   'Bengal Soft Cotton Sarees',
-  'Malai Cotton',
+  'Bengal Soft Cotton',
   stock26,
-  1150,
-  950
+  '1,150',
+  '950'
 );
 
 const stock27 = [
@@ -109,8 +109,8 @@ const item27 = generateItems(
   'Kota Doriya Sarees',
   'Kota Doriya',
   stock27,
-  1300,
-  1100
+  '1,300',
+  '1,100'
 );
 
 const stock28 = [
@@ -132,8 +132,8 @@ const item28 = generateItems(
   'Malai Cotton Sarees',
   'MulMul Cotton',
   stock28,
-  1200,
-  1000
+  '1,200',
+  '1,000'
 );
 
 const stock29 = [
@@ -167,16 +167,16 @@ const item29 = generateItems(
 );
 
 const stock30 = [
-  {colour: 'Red', qty: 2},
-  {colour: 'Black', qty: 2},
-  {colour: 'Blue', qty: 2},
-  {colour: 'Chocolate', qty: 2},
-  {colour: 'Black', qty: 1},
-  {colour: 'Black', qty: 1},
-  {colour: 'Red', qty: 1},
-  {colour: 'Red', qty: 1},
-  {colour: 'Red', qty: 1},
-  {colour: 'Yellow', qty: 1},
+  { colour: 'Red', qty: 2 },
+  { colour: 'Black', qty: 2 },
+  { colour: 'Blue', qty: 2 },
+  { colour: 'Chocolate', qty: 2 },
+  { colour: 'Black', qty: 1 },
+  { colour: 'Black', qty: 1 },
+  { colour: 'Red', qty: 1 },
+  { colour: 'Red', qty: 1 },
+  { colour: 'Red', qty: 1 },
+  { colour: 'Yellow', qty: 1 },
 ];
 const item30 = generateItems(
   '30NB10',
@@ -189,12 +189,12 @@ const item30 = generateItems(
 );
 
 const stock31 = [
-  {colour: 'Red', qty: 1},
-  {colour: 'Green', qty: 1},
-  {colour: 'Teal', qty: 1},
-  {colour: 'Black', qty: 1},
-  {colour: 'Purple', qty: 1},
-  {colour: 'Yellow', qty: 1},
+  { colour: 'Red', qty: 1 },
+  { colour: 'Green', qty: 1 },
+  { colour: 'Teal', qty: 1 },
+  { colour: 'Black', qty: 1 },
+  { colour: 'Purple', qty: 1 },
+  { colour: 'Yellow', qty: 1 },
 ];
 const item31 = generateItems(
   '31PK6',
@@ -207,8 +207,8 @@ const item31 = generateItems(
 );
 
 const stock32 = [
-  {colour: 'Violet', qty: 1},
-  {colour: 'Teal', qty: 1},
+  { colour: 'Violet', qty: 1 },
+  { colour: 'Teal', qty: 1 },
 ];
 const item32 = generateItems(
   '32GS2',
@@ -221,9 +221,9 @@ const item32 = generateItems(
 );
 
 const stock33 = [
-  {colour: 'Tangerine', qty: 1},
-  {colour: 'Maroon', qty: 1},
-  {colour: 'Blue', qty: 1},
+  { colour: 'Tangerine', qty: 1 },
+  { colour: 'Maroon', qty: 1 },
+  { colour: 'Blue', qty: 1 },
 ];
 const item33 = generateItems(
   '33GS3',
@@ -236,11 +236,11 @@ const item33 = generateItems(
 );
 
 const stock34 = [
-  {colour: 'Orange', qty: 1},
-  {colour: 'Teal', qty: 1},
-  {colour: 'Mustard', qty: 1},
-  {colour: 'Coffee', qty: 1},
-  {colour: 'Red', qty: 1},
+  { colour: 'Orange', qty: 1 },
+  { colour: 'Teal', qty: 1 },
+  { colour: 'Mustard', qty: 1 },
+  { colour: 'Coffee', qty: 1 },
+  { colour: 'Red', qty: 1 },
 ];
 const item34 = generateItems(
   '34KS5',
