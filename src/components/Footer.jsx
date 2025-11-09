@@ -30,7 +30,7 @@ const Footer = () => {
 
         {/* Column 2 — Contact Info */}
         <div>
-          <h3 className="text-xl font-semibold text-white mb-4">Contact Us</h3>
+          <h2 className="text-xl font-semibold text-white mb-4">Contact Us</h2>
           <ul className="space-y-3">
             <li className="flex items-center space-x-3">
               <FaPhoneAlt className="text-(--color-secondary)" />
