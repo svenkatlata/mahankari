@@ -8,8 +8,8 @@ const subcodes = [
 ];
 
 function generateItems(code, productName, category, fabric, stock, mrp, price) {
-  const colours = stock.map(item => item.colour);
-  const quantity = stock.map(item => item.qty);
+  const colours = stock.map((item) => item.colour);
+  const quantity = stock.map((item) => item.qty);
   const count = colours.length;
   return subcodes.slice(0, count).map((subcode, idx) => ({
     id: `${code}/${subcode}`,
@@ -136,14 +136,138 @@ const item28 = generateItems(
   1000
 );
 
+const stock29 = [
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+  { colour: 'Multicolour', qty: 1 },
+];
+const item29 = generateItems(
+  '29HC20',
+  'Kalamkari Cotton Saree',
+  'Handloom Cotton Sarees',
+  '120 Count Pure Cotton',
+  stock28,
+  1050,
+  850
+);
 
+const stock30 = [
+  {colour: 'Red', qty: 2},
+  {colour: 'Black', qty: 2},
+  {colour: 'Blue', qty: 2},
+  {colour: 'Chocolate', qty: 2},
+  {colour: 'Black', qty: 1},
+  {colour: 'Black', qty: 1},
+  {colour: 'Red', qty: 1},
+  {colour: 'Red', qty: 1},
+  {colour: 'Red', qty: 1},
+  {colour: 'Yellow', qty: 1},
+];
+const item30 = generateItems(
+  '30NB10',
+  'Nizam Border Kalamkari Saree',
+  'Chennur Silk Sarees',
+  'Chennur Silk',
+  stock30,
+  2400,
+  2200
+);
+
+const stock31 = [
+  {colour: 'Red', qty: 1},
+  {colour: 'Green', qty: 1},
+  {colour: 'Teal', qty: 1},
+  {colour: 'Black', qty: 1},
+  {colour: 'Purple', qty: 1},
+  {colour: 'Yellow', qty: 1},
+];
+const item31 = generateItems(
+  '31PK6',
+  'Pen Kalamkari Dupatta',
+  'Pen Kalamkari Lehengas',
+  'Chennur Silk',
+  stock31,
+  2250,
+  2050
+);
+
+const stock32 = [
+  {colour: 'Violet', qty: 1},
+  {colour: 'Teal', qty: 1},
+];
+const item32 = generateItems(
+  '32GS2',
+  'Hand Block Printed Crochet Dress Material',
+  'Unstiched Dress Material',
+  'Georgette',
+  stock32,
+  1950,
+  1750
+);
+
+const stock33 = [
+  {colour: 'Tangerine', qty: 1},
+  {colour: 'Maroon', qty: 1},
+  {colour: 'Blue', qty: 1},
+];
+const item33 = generateItems(
+  '33GS3',
+  'Hand Block Printed Dress Material',
+  'Unstiched Dress Material',
+  'Georgette',
+  stock33,
+  1650,
+  1450
+);
+
+const stock34 = [
+  {colour: 'Orange', qty: 1},
+  {colour: 'Teal', qty: 1},
+  {colour: 'Mustard', qty: 1},
+  {colour: 'Coffee', qty: 1},
+  {colour: 'Red', qty: 1},
+];
+const item34 = generateItems(
+  '34KS5',
+  'Hand Block Printed Dress Material',
+  'Unstiched Dress Material',
+  'Kota Cotton',
+  stock34,
+  1650,
+  1450
+);
 
 const products = [
-  { item25: { ...item25 }, item26: { ...item26 }, item27: { ...item27 }, item28: { ...item28 } },
+  {
+    item25: { ...item25 },
+    item26: { ...item26 },
+    item27: { ...item27 },
+    item28: { ...item28 },
+    item29: { ...item29 },
+    item30: { ...item30 },
+    item31: { ...item31 },
+    item32: { ...item32 },
+    item33: { ...item33 },
+    item34: { ...item34 },
+  },
 ];
 
-const newArrivals = [
-  ...item26
-];
+const newArrivals = [...item26];
+const exclusive = [...item32, ...item33, ...item34];
 
-export { products, newArrivals };
+export { products, newArrivals, exclusive };
