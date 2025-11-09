@@ -11,12 +11,8 @@ const ProductCard = ({ item }) => {
   // Auto image change when hovered
   useEffect(() => {
     if (!isHovered || totalImages <= 1) return;
+    setCurrentIndex(1); // Change image while hovered
 
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalImages);
-    }, 700); // Change image while hovered
-
-    return () => clearInterval(interval);
   }, [isHovered, totalImages]);
 
   return (
