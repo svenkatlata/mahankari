@@ -59,7 +59,7 @@ const Categories = () => {
         </div>
         {/* View All Button */}
         <div className="flex justify-center mt-12">
-          <button className="bg-(--color-primary) hover:bg-(--color-topbar) text-white font-medium py-3 px-8 transition">
+          <button className="bg-(--color-primary) hover:bg-(--color-topbar) text-white font-medium py-3 px-8 transition-colors duration-300 cursor-pointer">
             View All
           </button>
         </div>

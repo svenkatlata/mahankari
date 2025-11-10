@@ -131,7 +131,7 @@ const stock27 = [
 ];
 
 const item27 = generateItems(
-  "27SC35",
+  "27KD35",
   "Kota Doriya Embroidery Saree",
   "Kota Doriya Sarees",
   "Kota Doriya",
