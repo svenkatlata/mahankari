@@ -1,42 +1,32 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+
 import ToggleSwitch from "../components/ToggleSwitch";
+import ProductCard from "../components/ProductCard";
+import * as allproductsData from "../components/ProductsData";
 
 const ProductListing = () => {
   const [inStockOnly, setInStockOnly] = useState(false);
+  const { productsListing } = useParams();
 
-  const products = [
-    {
-      id: 1,
-      name: "Pure Mulmul Cotton - MC1013",
-      oldPrice: 1750,
-      newPrice: 1400,
-      discount: "20%",
-      img: "/images/saree-black.jpg",
-      inStock: true,
-    },
-    {
-      id: 2,
-      name: "Mulmul Cotton - MC985",
-      oldPrice: 1750,
-      newPrice: 1575,
-      discount: "10%",
-      img: "/images/saree-yellow.jpg",
-      inStock: true,
-    },
-    {
-      id: 3,
-      name: "Pure Mulmul Cotton - MC984",
-      oldPrice: 1750,
-      newPrice: 1575,
-      discount: "10%",
-      img: "/images/saree-green.jpg",
-      inStock: true,
-    },
-  ];
+  console.log("productsListing param:", productsListing);
 
-  const filteredProducts = inStockOnly
-    ? products.filter((p) => p.inStock)
-    : products;
+  let categoryurl = "";
+  productsListing.split("-").forEach((categoryword, idx) => {
+    if (idx === 0) {
+      categoryurl = categoryword;
+    } else {
+      var firstChar = categoryword.charAt(0).toUpperCase();
+      categoryurl += firstChar + categoryword.slice(1);
+    }
+  });
+
+  const filteredProducts = allproductsData[categoryurl];
+  console.log("filteredProducts:", filteredProducts);
+
+  //   const filteredProducts = inStockOnly
+  //     ? products.filter((p) => p.inStock)
+  //     : products;
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -91,36 +81,8 @@ const ProductListing = () => {
 
           {/* Product Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden group"
-              >
-                <div className="relative">
-                  <img
-                    src={product.img}
-                    alt={product.name}
-                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
-                    SAVE {product.discount}
-                  </span>
-                </div>
-
-                <div className="p-4">
-                  <h3 className="font-medium text-gray-800 text-sm mb-2">
-                    {product.name.toUpperCase()}
-                  </h3>
-                  <div className="flex items-center gap-2 text-sm">
-                    <span className="text-gray-500 line-through">
-                      ₹{product.oldPrice}/-
-                    </span>
-                    <span className="text-red-600 font-semibold">
-                      ₹{product.newPrice}/-
-                    </span>
-                  </div>
-                </div>
-              </div>
+            {filteredProducts.map((item) => (
+              <ProductCard key={item.id} item={item} />
             ))}
           </div>
         </main>
