@@ -8,7 +8,7 @@ const ToggleSwitch = () => {
       {/* Toggle */}
       <div
         className={`relative w-10 h-5 rounded-full transition-colors duration-300 ${
-          enabled ? "bg-green-500" : "bg-gray-300"
+          enabled ? "bg-(--color-primary)" : "bg-gray-300"
         }`}
         onClick={() => setEnabled(!enabled)}
       >

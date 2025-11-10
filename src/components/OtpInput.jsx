@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa';
+import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 const OtpInput = ({ otpLength = 4, handleBackClick, phoneNumber }) => {
-  const [otp, setOtp] = useState(new Array(otpLength).fill(''));
+  const [otp, setOtp] = useState(new Array(otpLength).fill(""));
   const [showContinueBtn, setShowContinueBtn] = useState(false);
   const [globIndex, setGlobIndex] = useState(0);
   const inputRefs = useRef([]);
@@ -36,35 +36,35 @@ const OtpInput = ({ otpLength = 4, handleBackClick, phoneNumber }) => {
 
   // Format time as MM:SS
   const formatTime = (seconds) => {
-    const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
-    const secs = String(seconds % 60).padStart(2, '0');
+    const mins = String(Math.floor(seconds / 60)).padStart(2, "0");
+    const secs = String(seconds % 60).padStart(2, "0");
     return `${mins}:${secs}`;
   };
 
   const handleOtpChange = (e, index) => {
     const value = e.target.value;
-    const enteredNum = value.replace(/\D/g, ''); // Remove non-digit characters
+    const enteredNum = value.replace(/\D/g, ""); // Remove non-digit characters
     const newOtp = [...otp];
     newOtp[index] = enteredNum;
     setOtp(newOtp);
-    setGlobIndex(newOtp.indexOf(''));
+    setGlobIndex(newOtp.indexOf(""));
     // Move focus to next input if a digit was entered
     if (enteredNum && index < otpLength - 1) {
       inputRefs.current[index + 1].focus();
     }
 
     // If all inputs are filled, you can handle OTP submission here
-    setShowContinueBtn(newOtp.every((digit) => digit !== ''));
+    setShowContinueBtn(newOtp.every((digit) => digit !== ""));
   };
   const handleOtpClick = (e, index) => {
     inputRefs.current[index].focus();
   };
   const handleOtpKeyDown = (e, index) => {
-    if (e.key === 'Backspace') {
-      if (otp[index] === '' && index > 0) {
+    if (e.key === "Backspace") {
+      if (otp[index] === "" && index > 0) {
         // delete previous value and move focus
         const newOtp = [...otp];
-        newOtp[index - 1] = '';
+        newOtp[index - 1] = "";
         setOtp(newOtp);
         inputRefs.current[index - 1].focus();
       }
@@ -73,8 +73,8 @@ const OtpInput = ({ otpLength = 4, handleBackClick, phoneNumber }) => {
 
   const handleOtpSubmit = (e) => {
     e.preventDefault();
-    // alert('OTP Submitted: ' + otp.join(''));
-    navigate('/dashboard', { state: { phoneNumber } });
+    // alert("OTP Submitted: " + otp.join(""));
+    navigate("/dashboard", { state: { phoneNumber } });
   };
 
   return (
@@ -85,7 +85,7 @@ const OtpInput = ({ otpLength = 4, handleBackClick, phoneNumber }) => {
             href="#"
             className="inline-flex justify-around gap-2 font-sm items-center"
           >
-            <FaArrowLeft className="h-4" />{' '}
+            <FaArrowLeft className="h-4" />{" "}
             <span onClick={handleBackClick}>Back</span>
           </a>
           <label

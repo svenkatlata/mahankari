@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
-import hero_1 from '../assets/hero_1.png';
-import hero_2 from '../assets/hero_2.png';
-import hero_3 from '../assets/hero_3.png';
-import hero_4 from '../assets/hero_4.png';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import React, { useEffect, useState, useRef } from "react";
+import hero_1 from "../assets/hero_1.png";
+import hero_2 from "../assets/hero_2.png";
+import hero_3 from "../assets/hero_3.png";
+import hero_4 from "../assets/hero_4.png";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Hero = () => {
   const slides = [hero_1, hero_2, hero_3, hero_4];
@@ -56,7 +56,12 @@ const Hero = () => {
         onTouchEnd={(e) => handleEnd(e.changedTouches[0].clientX)}
       >
         {slides.map((s, idx) => (
-          <img src={s} key={idx} className="w-full shrink-0" draggable="false" />
+          <img
+            src={s}
+            key={idx}
+            className="w-full shrink-0"
+            draggable="false"
+          />
         ))}
       </div>
 
@@ -81,8 +86,8 @@ const Hero = () => {
               }}
               className={`transition-all w-3 h-3 rounded-full cursor-pointer ${
                 curr === i
-                  ? 'bg-(--color-secondary) p-2'
-                  : 'bg-(--color-secondary)/50'
+                  ? "bg-(--color-secondary) p-2"
+                  : "bg-(--color-secondary)/50"
               }`}
             ></div>
           ))}

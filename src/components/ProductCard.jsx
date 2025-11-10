@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 
 const ProductCard = ({ item, onAddToCart }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const totalImages = item.images?.length || 0;
-  const productTitle = item.product.split(' ').join('-').toLowerCase();
+  const productTitle = item.product.split(" ").join("-").toLowerCase();
   const productInfo = `${productTitle}-${item.id.toLowerCase()}`;
 
   // Auto image change when hovered
@@ -16,7 +16,7 @@ const ProductCard = ({ item, onAddToCart }) => {
   }, [isHovered, totalImages]);
 
   return (
-    <Link to={`product-details/${productInfo}`}>
+    <Link to={`/products/${productInfo}`}>
       <div
         className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 shrink-0 w-66 relative"
         onMouseEnter={() => setIsHovered(true)}
@@ -42,8 +42,8 @@ const ProductCard = ({ item, onAddToCart }) => {
             }}
             className={`absolute top-2 right-2 bg-white text-(--color-primary) p-2 rounded-full shadow-md transition-all duration-300 z-20 ${
               isHovered
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-2'
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
             }`}
           >
             <FaPlus size={14} />
@@ -59,7 +59,7 @@ const ProductCard = ({ item, onAddToCart }) => {
               }
               alt={item.product}
               className={`aspect-3/4 object-cover rounded-t-lg w-full transition-all duration-500 ${
-                item.isSoldOut ? 'opacity-60' : 'opacity-100'
+                item.isSoldOut ? "opacity-60" : "opacity-100"
               }`}
             />
           )}

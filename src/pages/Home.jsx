@@ -1,14 +1,14 @@
-import React from 'react';
-import Hero from '../components/Hero';
-import Benefits from '../components/Benefits';
-import Categories from '../components/Categories';
-import NewArrivals from '../components/NewArrivals';
-import Exclusive from '../components/Exclusive';
+import React from "react";
+import Hero from "../components/Hero";
+import Benefits from "../components/Benefits";
+import Categories from "../components/Categories";
+import NewArrivals from "../components/NewArrivals";
+import Exclusive from "../components/Exclusive";
 import Trending from "../components/Trending";
-import { products } from '../components/ProductsData';
+import { products } from "../components/ProductsData";
 
 const Home = () => {
-  console.log('images in home', products);
+  console.log("images in home", products);
   return (
     <div>
       <Hero />

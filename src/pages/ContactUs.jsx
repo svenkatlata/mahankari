@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import React from "react";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactUs = () => {
   return (
@@ -9,7 +9,7 @@ const ContactUs = () => {
           Contact Us
         </h2>
         <p className="text-center text-gray-600 mb-10">
-          Have a question, feedback, or collaboration idea? We'd love to hear
+          Have a question, feedback, or collaboration idea? We"d love to hear
           from you.
         </p>
 
@@ -19,7 +19,9 @@ const ContactUs = () => {
             <div className="flex items-start space-x-4">
               <FaPhoneAlt className="text-(--color-primary) text-2xl" />
               <div>
-                <h4 className="text-lg font-medium text-(--color-primary)">Phone</h4>
+                <h4 className="text-lg font-medium text-(--color-primary)">
+                  Phone
+                </h4>
                 <p className="text-gray-600">+91 82107 57108</p>
               </div>
             </div>
@@ -27,7 +29,9 @@ const ContactUs = () => {
             <div className="flex items-start space-x-4">
               <FaEnvelope className="text-(--color-primary) text-2xl" />
               <div>
-                <h4 className="text-lg font-medium text-(--color-primary)">Email</h4>
+                <h4 className="text-lg font-medium text-(--color-primary)">
+                  Email
+                </h4>
                 <p className="text-gray-600">mahankari.hyd@gmail.com</p>
               </div>
             </div>
@@ -35,7 +39,9 @@ const ContactUs = () => {
             <div className="flex items-start space-x-4">
               <FaMapMarkerAlt className="text-(--color-primary) text-2xl" />
               <div>
-                <h4 className="text-lg font-medium text-(--color-primary)">Address</h4>
+                <h4 className="text-lg font-medium text-(--color-primary)">
+                  Address
+                </h4>
                 <p className="text-gray-600">Manikonda, Hyderabad, India</p>
               </div>
             </div>
@@ -43,7 +49,7 @@ const ContactUs = () => {
             <div className="mt-6">
               <iframe
                 title="Google Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15223.206364309992!2d78.352053!3d17.4146628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9422532fb3f7%3A0xc793fad03d2e2af1!2sManikonda%2C%20Telangana!5e0!3m2!1sen!2sin!4v1731142560000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15223.206364309992!2d78.352053!3d17.4146628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9422532fb3f7%3A0xc793fad03d2e2af1!2sManikonda%2C%20Telangana!5e0!3m2!1sen!2sin!4v1731142560000!5m2!1sen!2sin"
                 width="100%"
                 height="220"
                 style={{ border: 0 }}

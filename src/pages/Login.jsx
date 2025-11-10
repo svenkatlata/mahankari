@@ -30,13 +30,13 @@ const Login = () => {
     document.getElementById("phoneNum").focus();
   };
 
-  // const [mobile, setMobile] = useState('');
+  // const [mobile, setMobile] = useState("");
   // const [otpBtnVisibility, setOtpBtnVisibility] = useState(false);
   // const [onOtpBtn, setOnOtpBtn] = useState(false);
 
   // const onMobileChange = (e) => {
   //   const input = e.target.value;
-  //   const enteredNums = input.replace(/\D/g, '');
+  //   const enteredNums = input.replace(/\D/g, "");
   //   setMobile(enteredNums);
   //   setOtpBtnVisibility(enteredNums.length === 10);
   // };
@@ -48,7 +48,7 @@ const Login = () => {
 
   // const onContinueClick = (e) => {
   //   e.preventDefault();
-  //   alert('Logged in successfully!');
+  //   alert("Logged in successfully!");
   // };
 
   return (
@@ -120,7 +120,11 @@ const Login = () => {
               </div>
             </form>
           ) : (
-            <OtpInput otpLength={otpLength} handleBackClick={handleBackClick} phoneNumber={phoneNumber} />
+            <OtpInput
+              otpLength={otpLength}
+              handleBackClick={handleBackClick}
+              phoneNumber={phoneNumber}
+            />
           )}
         </div>
         {/* {onOtpBtn && renderOTP()} */}

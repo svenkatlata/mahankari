@@ -1,20 +1,20 @@
-import React from 'react';
-import { IoDiamond, IoArrowUndo } from 'react-icons/io5';
-import { FaTruckFast, FaTags } from 'react-icons/fa6';
+import React from "react";
+import { IoDiamond, IoArrowUndo } from "react-icons/io5";
+import { FaTruckFast, FaTags } from "react-icons/fa6";
 
 const Benefits = () => {
   return (
     <section>
       <div className="max-w-3xl mx-auto text-center font-semibold py-20 px-4 text-(--color-primary)">
         <span>
-          We are committed to preserving India's rich heritage and promoting
+          We are committed to preserving India"s rich heritage and promoting
           sustainable clothing.
         </span>
         <br />
         <span>
           By collaborating directly with traditional weavers across India, we
           bring you authentic handloom products — crafted with care, rich in
-          texture, and made to last a lifetime. Each piece celebrates India's
+          texture, and made to last a lifetime. Each piece celebrates India"s
           textile legacy and supports the delicate economy of the local artisans
           who keep it alive.
         </span>

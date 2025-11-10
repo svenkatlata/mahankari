@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -6,7 +6,7 @@ import {
   FaInstagram,
   FaFacebookF,
   FaTwitter,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -18,13 +18,15 @@ const Footer = () => {
             Mahankari Threads & Tales
           </h3>
           <p className="text-gray-400">
-            We celebrate India's handloom heritage by supporting local artisans and promoting sustainable, vegan clothing alternatives.
-            </p>
-          <p className="text-gray-400">  
-      Each saree brought to you blends tradition, craftsmanship, and conscious fashion — 
+            We celebrate India"s handloom heritage by supporting local artisans
+            and promoting sustainable, vegan clothing alternatives.
           </p>
           <p className="text-gray-400">
-          keeping our culture alive, one weave at a time.
+            Each saree brought to you blends tradition, craftsmanship, and
+            conscious fashion —
+          </p>
+          <p className="text-gray-400">
+            keeping our culture alive, one weave at a time.
           </p>
         </div>
 
@@ -56,9 +58,12 @@ const Footer = () => {
             Follow us on social media for updates on new collections & offers.
           </p>
           <div className="flex space-x-4 mb-6">
-            <a href="" className="hover:text-(--color-secondary) transition flex flex-row gap-2">
+            <a
+              href=""
+              className="hover:text-(--color-secondary) transition flex flex-row gap-2"
+            >
               <FaInstagram size={22} />
-              <span>mahankari.hyd</ span>
+              <span>mahankari.hyd</span>
             </a>
             {/* <a href="#" className="hover:text-(--color-secondary) transition">
               <FaFacebookF size={22} />
@@ -72,11 +77,11 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-3 bg-(--color-secondary) py-2 rounded-l-lg text-gray-800 focus:outline-none"
+              className="flex-1 px-3 bg-(--color-secondary) py-2 text-gray-800 focus:outline-none"
             />
             <button
               type="submit"
-              className="bg-(--color-secondary) hover:bg-(--color-secondary) text-(--color-primary) px-4 py-2 rounded-r-lg font-medium transition"
+              className="bg-(--color-secondary) hover:bg-(--color-secondary) text-(--color-primary) px-4 py-2 font-medium transition"
             >
               Subscribe
             </button>

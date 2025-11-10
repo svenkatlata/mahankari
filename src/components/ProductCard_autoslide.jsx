@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+import React, { useState, useEffect } from "react";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const ProductCard = ({ item }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
