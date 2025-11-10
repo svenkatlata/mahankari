@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { newArrivals } from './ProductsData';
+import { trending } from './ProductsData';
 import ProductCard from './ProductCard';
 
 import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
 
-const NewArrivals = () => {
-  console.log('newArrivals', newArrivals);
+const Trending = () => {
+  console.log('trending', trending);
   const carouselRef = useRef(null);
   const [isBackHidden, setIsBackHidden] = useState(true);
   const [isForwardHidden, setIsForwardHidden] = useState(false);
@@ -37,7 +37,7 @@ const NewArrivals = () => {
     <section>
       <div className="p-10 text-(--color-primary)">
         <h1 className="text-3xl tracking-wider fond-semibold font-[Georgia] text-center pb-6">
-          NEW ARRIVALS
+          Trending Sarees
         </h1>
         {/* Carousel container */}
         <div className="relative py-10">
@@ -55,7 +55,7 @@ const NewArrivals = () => {
             ref={carouselRef}
             className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-5"
           >
-            {newArrivals.map((item) => (
+            {trending.map((item) => (
               <ProductCard key={item.id} item={item} />
             ))}
           </div>
@@ -74,4 +74,4 @@ const NewArrivals = () => {
   );
 };
 
-export default NewArrivals;
+export default Trending;
