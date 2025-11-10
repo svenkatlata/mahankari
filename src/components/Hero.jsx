@@ -4,6 +4,7 @@ import hero_2 from "../assets/hero_2.png";
 import hero_3 from "../assets/hero_3.png";
 import hero_4 from "../assets/hero_4.png";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const Hero = () => {
   const slides = [hero_1, hero_2, hero_3, hero_4];
@@ -66,41 +67,42 @@ const Hero = () => {
       </div>
 
       {/* Controls */}
-      <div className="flex justify-center gap-8 px-8 bg-(--color-primary)">
-        <button
-          onClick={() => {
-            prev();
-            resetInterval();
-          }}
-          className="p-4 text-(--color-secondary) hover:text-(--color-accent)"
-        >
-          <FaAngleLeft className="h-8" />
-        </button>
-        <div className="flex items-center justify-center gap-2">
-          {slides.map((_, i) => (
-            <div
-              key={i}
-              onClick={() => {
-                setCurr(i);
-                resetInterval();
-              }}
-              className={`transition-all w-3 h-3 rounded-full cursor-pointer ${
-                curr === i
-                  ? "bg-(--color-secondary) p-2"
-                  : "bg-(--color-secondary)/50"
-              }`}
-            ></div>
-          ))}
-        </div>
-        <button
-          onClick={() => {
-            next();
-            resetInterval();
-          }}
-          className="p-4 text-(--color-secondary) hover:text-(--color-accent)"
-        >
-          <FaAngleRight className="h-8" />
-        </button>
+      <button
+        onClick={() => {
+          prev();
+          resetInterval();
+        }}
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 bg-white/0 rounded-full hover:bg-white/30 text-(--color-secondary)"
+      >
+        <IoChevronBack className="text-xl" />
+      </button>
+
+      <button
+        onClick={() => {
+          next();
+          resetInterval();
+        }}
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 bg-white/0 rounded-full hover:bg-white/30 text-(--color-secondary)"
+      >
+        <IoChevronForward className="text-xl" />
+      </button>
+
+      {/* Dots */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-2">
+        {slides.map((_, i) => (
+          <div
+            key={i}
+            onClick={() => {
+              setCurr(i);
+              resetInterval();
+            }}
+            className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
+              curr === i
+                ? "bg-(--color-secondary) p-1"
+                : "bg-(--color-secondary)/50"
+            }`}
+          ></div>
+        ))}
       </div>
     </section>
   );
