@@ -149,69 +149,67 @@ const ProductDetails = () => {
             {!selectedProduct.isSoldOut ? (
               <div className="flex flex-col gap-4">
                 {/* Quantity */}
-                  <span className="text-sm text-gray-700 font-medium">
-                    Quantity
-                  </span>
-                  <div className="flex w-fit items-center border border-(--color-primary) overflow-hidden">
-                    <button
-                      onClick={() =>
-                        setQuantity((prev) => Math.max(1, prev - 1))
-                      }
-                      className={`p-3 text-lg text-gray-700 transition 
+                <span className="text-sm text-gray-700 font-medium">
+                  Quantity
+                </span>
+                <div className="flex w-fit items-center border border-(--color-primary) overflow-hidden">
+                  <button
+                    onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                    className={`p-3 text-lg text-gray-700 transition 
                   ${
                     quantity === 1
                       ? "opacity-50 cursor-not-allowed"
                       : "hover:bg-gray-100 cursor-pointer"
                   }`}
-                    >
-                      <IoRemove />
-                    </button>
-                    <span className="px-4 py-1 text-gray-800 font-medium select-none">
-                      {quantity}
-                    </span>
-                    <button
-                      onClick={() =>
-                        setQuantity((prev) => Math.min(prev + 1, maxQty))
-                      }
-                      className={`p-3 text-lg text-gray-700 transition 
+                  >
+                    <IoRemove />
+                  </button>
+                  <span className="px-4 py-1 text-gray-800 font-medium select-none">
+                    {quantity}
+                  </span>
+                  <button
+                    onClick={() =>
+                      setQuantity((prev) => Math.min(prev + 1, maxQty))
+                    }
+                    className={`p-3 text-lg text-gray-700 transition 
                   ${
                     quantity === maxQty
                       ? "opacity-50 cursor-not-allowed"
                       : "hover:bg-gray-100 cursor-pointer"
                   }`}
-                    >
-                      <IoAdd />
-                    </button>
-                  </div>
-                  <div
-                    className={`text-red-500 ${
-                      quantity === maxQty ? "block" : "hidden"
-                    }`}
                   >
-                    Sorry, we have limited quantity available for this item!
-                  </div>
+                    <IoAdd />
+                  </button>
+                </div>
+                <div
+                  className={`text-red-500 ${
+                    quantity === maxQty ? "block" : "hidden"
+                  }`}
+                >
+                  Sorry, we have limited quantity available for this item!
+                </div>
 
                 {/* Buttons */}
                 {/* Double border: outer shows on hover, inner always visible */}
-                  <div className="inline-block group">
-                    {/* wrapper = outer border area (keeps space) */}
-                    <div className="border-2 border-transparent group-hover:border-(--color-primary) transition-colors duration-200">
-                      <button
-                        className="w-full h-12 px-6 bg-white border border-(--color-primary) text-(--color-primary) font-medium cursor-pointer transition-transform duration-150"
-                        // keep height fixed so nothing moves
-                      >
-                        Add to Cart
-                      </button>
-                    </div>
+                <div className="inline-block group">
+                  {/* wrapper = outer border area (keeps space) */}
+                  <div className="border-2 border-transparent group-hover:border-(--color-primary) transition-colors duration-200">
+                    <button
+                      className="w-full h-12 px-6 bg-white border border-(--color-primary) text-(--color-primary) font-medium cursor-pointer transition-transform duration-150"
+                      // keep height fixed so nothing moves
+                    >
+                      Add to Cart
+                    </button>
                   </div>
+                </div>
 
-                  <div className="inline-block group">
-                    <div className="border-2 border-transparent group-hover:border-(--color-primary) transition-colors duration-200">
-                      <button className="w-full h-12 px-6 bg-(--color-primary) border border-(--color-primary) text-white font-medium cursor-pointer transition-transform duration-150">
-                        Buy It Now
-                      </button>
-                    </div>
+                <div className="inline-block group">
+                  <div className="border-2 border-transparent group-hover:border-(--color-primary) transition-colors duration-200">
+                    <button className="w-full h-12 px-6 bg-(--color-primary) border border-(--color-primary) text-white font-medium cursor-pointer transition-transform duration-150">
+                      Buy It Now
+                    </button>
                   </div>
+                </div>
               </div>
             ) : (
               <div className="flex flex-col items-start border border-gray-300 p-6 mb-10">

@@ -17,6 +17,11 @@ const ProductListing = () => {
 
   console.log("productsListing param:", productsListing);
 
+  
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
   let categoryurl = "";
   productsListing.split("-").forEach((categoryword, idx) => {
     if (idx === 0) {
