@@ -1,4 +1,4 @@
-const images = import.meta.glob('../assets/products/*/*/*.{png,jpg,jpeg,svg}', {
+const images = import.meta.glob("../assets/products/*/*/*.{png,jpg,jpeg,svg}", {
   eager: true,
 });
 
@@ -28,228 +28,228 @@ function generateItems(code, productName, category, fabric, stock, mrp, price) {
 }
 
 const stock25 = [
-  { colour: 'Black', qty: 2 },
-  { colour: 'White', qty: 1 },
-  { colour: 'Pink', qty: 2 },
-  { colour: 'Red', qty: 1 },
-  { colour: 'Navy', qty: 1 },
-  { colour: 'Green', qty: 1 },
+  { colour: "Black", qty: 2 },
+  { colour: "White", qty: 1 },
+  { colour: "Pink", qty: 2 },
+  { colour: "Red", qty: 1 },
+  { colour: "Navy", qty: 1 },
+  { colour: "Green", qty: 1 },
 ];
 const item25 = generateItems(
-  '25SC6',
-  'Rainbow Saree',
-  'Bengal Soft Cotton Sarees',
-  'Bengal Soft Cotton',
+  "25SC6",
+  "Rainbow Saree",
+  "Bengal Soft Cotton Sarees",
+  "Bengal Soft Cotton",
   stock25,
-  '950',
-  '750'
+  "950",
+  "750"
 );
 
 const stock26 = [
-  { colour: 'Yellow', qty: 1 },
-  { colour: 'Pink', qty: 1 },
-  { colour: 'Red', qty: 1 },
-  { colour: 'Sky Blue', qty: 1 },
-  { colour: 'Blue', qty: 1 },
-  { colour: 'Navy', qty: 1 },
-  { colour: 'Light Green', qty: 1 },
-  { colour: 'Bottle Green', qty: 1 },
+  { colour: "Yellow", qty: 1 },
+  { colour: "Pink", qty: 1 },
+  { colour: "Red", qty: 1 },
+  { colour: "Sky Blue", qty: 1 },
+  { colour: "Blue", qty: 1 },
+  { colour: "Navy", qty: 1 },
+  { colour: "Light Green", qty: 1 },
+  { colour: "Bottle Green", qty: 1 },
 ];
 const item26 = generateItems(
-  '26SC8',
-  'Hand-Painted Sunflower Print Trendy Saree',
-  'Bengal Soft Cotton Sarees',
-  'Bengal Soft Cotton',
+  "26SC8",
+  "Hand-Painted Sunflower Print Trendy Saree",
+  "Bengal Soft Cotton Sarees",
+  "Bengal Soft Cotton",
   stock26,
-  '1,150',
-  '950'
+  "1,150",
+  "950"
 );
 
 const stock27 = [
-  { colour: 'Lavender', qty: 1 },
-  { colour: 'Magenta', qty: 1 },
-  { colour: 'Peach', qty: 1 },
-  { colour: 'Golden', qty: 1 },
-  { colour: 'Orange', qty: 1 },
-  { colour: 'Marigold', qty: 1 },
-  { colour: 'Teal', qty: 1 },
-  { colour: 'Rose', qty: 1 },
-  { colour: 'Peach', qty: 1 },
-  { colour: 'Orange', qty: 1 },
-  { colour: 'Golden', qty: 1 },
-  { colour: 'Marigold', qty: 1 },
-  { colour: 'Teal', qty: 1 },
-  { colour: 'Tangerine', qty: 1 },
-  { colour: 'Grey', qty: 1 },
-  { colour: 'Green', qty: 1 },
-  { colour: 'Coral', qty: 1 },
-  { colour: 'Cream', qty: 1 },
-  { colour: 'Sea Green', qty: 1 },
-  { colour: 'Pink', qty: 1 },
-  { colour: 'Coral', qty: 1 },
-  { colour: 'Green', qty: 1 },
-  { colour: 'Grey', qty: 1 },
-  { colour: 'Sky Blue', qty: 1 },
-  { colour: 'Cucumber', qty: 1 },
-  { colour: 'Blush', qty: 1 },
-  { colour: 'Coral', qty: 1 },
-  { colour: 'Blush', qty: 1 },
-  { colour: 'Blush', qty: 1 },
-  { colour: 'Yellow', qty: 1 },
-  { colour: 'Cream', qty: 1 },
-  { colour: 'Cream', qty: 1 },
-  { colour: 'Yellow', qty: 1 },
-  { colour: 'Grey', qty: 1 },
-  { colour: 'Cream', qty: 1 },
+  { colour: "Lavender", qty: 1 },
+  { colour: "Magenta", qty: 1 },
+  { colour: "Peach", qty: 1 },
+  { colour: "Golden", qty: 1 },
+  { colour: "Orange", qty: 1 },
+  { colour: "Marigold", qty: 1 },
+  { colour: "Teal", qty: 1 },
+  { colour: "Rose", qty: 1 },
+  { colour: "Peach", qty: 1 },
+  { colour: "Orange", qty: 1 },
+  { colour: "Golden", qty: 1 },
+  { colour: "Marigold", qty: 1 },
+  { colour: "Teal", qty: 1 },
+  { colour: "Tangerine", qty: 1 },
+  { colour: "Grey", qty: 1 },
+  { colour: "Green", qty: 1 },
+  { colour: "Coral", qty: 1 },
+  { colour: "Cream", qty: 1 },
+  { colour: "Sea Green", qty: 1 },
+  { colour: "Pink", qty: 1 },
+  { colour: "Coral", qty: 1 },
+  { colour: "Green", qty: 1 },
+  { colour: "Grey", qty: 1 },
+  { colour: "Sky Blue", qty: 1 },
+  { colour: "Cucumber", qty: 1 },
+  { colour: "Blush", qty: 1 },
+  { colour: "Coral", qty: 1 },
+  { colour: "Blush", qty: 1 },
+  { colour: "Blush", qty: 1 },
+  { colour: "Yellow", qty: 1 },
+  { colour: "Cream", qty: 1 },
+  { colour: "Cream", qty: 1 },
+  { colour: "Yellow", qty: 1 },
+  { colour: "Grey", qty: 1 },
+  { colour: "Cream", qty: 1 },
 ];
 
 const item27 = generateItems(
-  '27SC35',
-  'Kota Doriya Embroidery Saree',
-  'Kota Doriya Sarees',
-  'Kota Doriya',
+  "27SC35",
+  "Kota Doriya Embroidery Saree",
+  "Kota Doriya Sarees",
+  "Kota Doriya",
   stock27,
-  '1,300',
-  '1,100'
+  "1,300",
+  "1,100"
 );
 
 const stock28 = [
-  { colour: 'Teal', qty: 1 },
-  { colour: 'Blue', qty: 1 },
-  { colour: 'Blue', qty: 1 },
-  { colour: 'Navy', qty: 1 },
-  { colour: 'Navy', qty: 1 },
-  { colour: 'Pink', qty: 1 },
-  { colour: 'Pink', qty: 1 },
-  { colour: 'Grey', qty: 1 },
-  { colour: 'Grey', qty: 1 },
-  { colour: 'Tangerine', qty: 1 },
-  { colour: 'Tangerine', qty: 1 },
+  { colour: "Teal", qty: 1 },
+  { colour: "Blue", qty: 1 },
+  { colour: "Blue", qty: 1 },
+  { colour: "Navy", qty: 1 },
+  { colour: "Navy", qty: 1 },
+  { colour: "Pink", qty: 1 },
+  { colour: "Pink", qty: 1 },
+  { colour: "Grey", qty: 1 },
+  { colour: "Grey", qty: 1 },
+  { colour: "Tangerine", qty: 1 },
+  { colour: "Tangerine", qty: 1 },
 ];
 const item28 = generateItems(
-  '28MC11',
-  'Office Chic Saree',
-  'Malai Cotton Sarees',
-  'MulMul Cotton',
+  "28MC11",
+  "Office Chic Saree",
+  "Malai Cotton Sarees",
+  "MulMul Cotton",
   stock28,
-  '1,200',
-  '1,000'
+  "1,200",
+  "1,000"
 );
 
 const stock29 = [
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
-  { colour: 'Multicolour', qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
+  { colour: "Multicolour", qty: 1 },
 ];
 const item29 = generateItems(
-  '29HC20',
-  'Kalamkari Cotton Saree',
-  'Handloom Cotton Sarees',
-  '120 Count Pure Cotton',
+  "29HC20",
+  "Kalamkari Cotton Saree",
+  "Handloom Cotton Sarees",
+  "120 Count Pure Cotton",
   stock29,
-  '1,050',
-  '850'
+  "1,050",
+  "850"
 );
 
 const stock30 = [
-  { colour: 'Red', qty: 2 },
-  { colour: 'Black', qty: 2 },
-  { colour: 'Blue', qty: 2 },
-  { colour: 'Chocolate', qty: 2 },
-  { colour: 'Black', qty: 1 },
-  { colour: 'Black', qty: 1 },
-  { colour: 'Red', qty: 1 },
-  { colour: 'Red', qty: 1 },
-  { colour: 'Red', qty: 1 },
-  { colour: 'Yellow', qty: 1 },
+  { colour: "Red", qty: 2 },
+  { colour: "Black", qty: 2 },
+  { colour: "Blue", qty: 2 },
+  { colour: "Chocolate", qty: 2 },
+  { colour: "Black", qty: 1 },
+  { colour: "Black", qty: 1 },
+  { colour: "Red", qty: 1 },
+  { colour: "Red", qty: 1 },
+  { colour: "Red", qty: 1 },
+  { colour: "Yellow", qty: 1 },
 ];
 const item30 = generateItems(
-  '30NB10',
-  'Nizam Border Kalamkari Saree',
-  'Chennur Silk Sarees',
-  'Chennur Silk',
+  "30NB10",
+  "Nizam Border Kalamkari Saree",
+  "Chennur Silk Sarees",
+  "Chennur Silk",
   stock30,
-  '2,400',
-  '2,200'
+  "2,400",
+  "2,200"
 );
 
 const stock31 = [
-  { colour: 'Red', qty: 1 },
-  { colour: 'Green', qty: 1 },
-  { colour: 'Teal', qty: 1 },
-  { colour: 'Black', qty: 1 },
-  { colour: 'Purple', qty: 1 },
-  { colour: 'Yellow', qty: 1 },
+  { colour: "Red", qty: 1 },
+  { colour: "Green", qty: 1 },
+  { colour: "Teal", qty: 1 },
+  { colour: "Black", qty: 1 },
+  { colour: "Purple", qty: 1 },
+  { colour: "Yellow", qty: 1 },
 ];
 const item31 = generateItems(
-  '31PK6',
-  'Pen Kalamkari Dupatta',
-  'Pen Kalamkari Lehengas',
-  'Chennur Silk',
+  "31PK6",
+  "Pen Kalamkari Dupatta",
+  "Pen Kalamkari Lehengas",
+  "Chennur Silk",
   stock31,
-  '2,250',
-  '2,050'
+  "2,250",
+  "2,050"
 );
 
 const stock32 = [
-  { colour: 'Violet', qty: 1 },
-  { colour: 'Teal', qty: 1 },
+  { colour: "Violet", qty: 1 },
+  { colour: "Teal", qty: 1 },
 ];
 const item32 = generateItems(
-  '32GS2',
-  'Hand Block Printed Crochet Dress Material',
-  'Unstiched Dress Material',
-  'Georgette',
+  "32GS2",
+  "Hand Block Printed Crochet Dress Material",
+  "Unstiched Dress Material",
+  "Georgette",
   stock32,
-  '1,950',
-  '1,750'
+  "1,950",
+  "1,750"
 );
 
 const stock33 = [
-  { colour: 'Tangerine', qty: 1 },
-  { colour: 'Maroon', qty: 1 },
-  { colour: 'Blue', qty: 1 },
+  { colour: "Tangerine", qty: 1 },
+  { colour: "Maroon", qty: 1 },
+  { colour: "Blue", qty: 1 },
 ];
 const item33 = generateItems(
-  '33GS3',
-  'Hand Block Printed Dress Material',
-  'Unstiched Dress Material',
-  'Georgette',
+  "33GS3",
+  "Hand Block Printed Dress Material",
+  "Unstiched Dress Material",
+  "Georgette",
   stock33,
-  '1,650',
-  '1,450'
+  "1,650",
+  "1,450"
 );
 
 const stock34 = [
-  { colour: 'Orange', qty: 1 },
-  { colour: 'Teal', qty: 1 },
-  { colour: 'Mustard', qty: 1 },
-  { colour: 'Coffee', qty: 1 },
-  { colour: 'Red', qty: 1 },
+  { colour: "Orange", qty: 1 },
+  { colour: "Teal", qty: 1 },
+  { colour: "Mustard", qty: 1 },
+  { colour: "Coffee", qty: 1 },
+  { colour: "Red", qty: 1 },
 ];
 const item34 = generateItems(
-  '34KS5',
-  'Hand Block Printed Dress Material',
-  'Unstiched Dress Material',
-  'Kota Cotton',
+  "34KS5",
+  "Hand Block Printed Dress Material",
+  "Unstiched Dress Material",
+  "Kota Cotton",
   stock34,
-  '1,650',
-  '1,450'
+  "1,650",
+  "1,450"
 );
 
 const products = [

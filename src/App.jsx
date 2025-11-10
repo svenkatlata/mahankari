@@ -24,7 +24,10 @@ export default function App() {
           path="/product-details/:productInfo"
           element={<ProductDetails />}
         />
-        <Route path="/collections/" element={<ProductListing />} />
+        <Route
+          path="/collections/:productsListing"
+          element={<ProductListing />}
+        />
       </Routes>
       <Footer />
     </Router>
