@@ -1,11 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { trending } from './ProductsData';
-import ProductCard from './ProductCard';
+import React, { useRef, useState, useEffect } from "react";
+import { trending } from "./ProductsData";
+import ProductCard from "./ProductCard";
 
-import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const Trending = () => {
-  console.log('trending', trending);
+  console.log("trending", trending);
   const carouselRef = useRef(null);
   const [isBackHidden, setIsBackHidden] = useState(true);
   const [isForwardHidden, setIsForwardHidden] = useState(false);
@@ -13,10 +13,10 @@ const Trending = () => {
   const scroll = (direction) => {
     const { current } = carouselRef;
     const scrollAmount = current.offsetWidth; // scroll by one screen width
-    if (direction === 'left') {
-      current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    if (direction === "left") {
+      current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
-      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
@@ -30,8 +30,8 @@ const Trending = () => {
       );
     };
 
-    current.addEventListener('scroll', handleScroll);
-    return () => current.removeEventListener('scroll', handleScroll);
+    current.addEventListener("scroll", handleScroll);
+    return () => current.removeEventListener("scroll", handleScroll);
   }, []);
   return (
     <section>
@@ -43,7 +43,7 @@ const Trending = () => {
         <div className="relative py-10">
           {/* Left Button */}
           <button
-            onClick={() => scroll('left')}
+            onClick={() => scroll("left")}
             hidden={isBackHidden}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md p-2 rounded-full hover:bg-gray-100 transition z-10"
           >
@@ -62,7 +62,7 @@ const Trending = () => {
 
           {/* Right Button */}
           <button
-            onClick={() => scroll('right')}
+            onClick={() => scroll("right")}
             hidden={isForwardHidden}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-md p-2 rounded-full hover:bg-gray-100 transition z-10"
           >

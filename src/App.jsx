@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/dashboard" element={<AccountOverview />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route
-          path="/product-details/:productInfo"
+          path="/products/:productInfo"
           element={<ProductDetails />}
         />
         <Route
