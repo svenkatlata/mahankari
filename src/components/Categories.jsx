@@ -49,7 +49,7 @@ const Categories = () => {
 
   return (
     <section>
-      <div className="p-10 pt-40 pb-20 text-center text-(--color-primary)">
+      <div className="p-10 pt-30 pb-20 text-center text-(--color-primary)">
         <h1 className="text-3xl tracking-wider fond-semibold font-[Georgia]">
           SAREE COLLECTIONS
         </h1>
