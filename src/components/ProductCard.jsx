@@ -27,7 +27,7 @@ const ProductCard = ({ item, onAddToCart }) => {
       >
         {/* Sold Out Badge */}
         {item.isSoldOut && (
-          <div className="absolute top-2 left-2 bg-white text-black text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-md z-20 flex items-center justify-center font-sans leading-none tracking-wide">
+          <div className="absolute top-2 left-2 bg-white text-black text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-md z-1 flex items-center justify-center font-sans leading-none tracking-wide">
             SOLD OUT
           </div>
         )}
@@ -40,7 +40,7 @@ const ProductCard = ({ item, onAddToCart }) => {
               e.stopPropagation();
               // onAddToCart?.(item);
             }}
-            className={`absolute top-2 right-2 bg-white text-(--color-primary) p-2 rounded-full shadow-md transition-all duration-300 z-20 ${
+            className={`absolute top-2 right-2 bg-white text-(--color-primary) p-2 rounded-full shadow-md transition-all duration-300 z-1 ${
               isHovered
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-2"

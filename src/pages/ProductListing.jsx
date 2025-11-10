@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import ToggleSwitch from "../components/ToggleSwitch";
@@ -17,10 +17,9 @@ const ProductListing = () => {
 
   console.log("productsListing param:", productsListing);
 
-  
-    useEffect(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   let categoryurl = "";
   productsListing.split("-").forEach((categoryword, idx) => {
