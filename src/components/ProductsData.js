@@ -7,7 +7,17 @@ const subcodes = [
   ...Array.from({ length: 26 }, (_, i) => `Z${String.fromCharCode(65 + i)}`), // ZA–ZZ
 ];
 
-function generateItems(code, productName, category, fabric, stock, mrp, price) {
+const ChennurSilkSareeSpecs = {
+      Occasion: 'Chennur Silk',
+      Fabric: 'Hand Block Print',
+      Colour: 'Kalamkari Dyeing',
+      Length: 'Rust Red with Gold Border',
+      Design: 'Hand Block Print',
+      'Wash & Care': 'Kalamkari Dyeing',
+      Origin: 'Rust Red with Gold Border',
+    };
+
+function generateItems(code, productName, category, fabric, stock, mrp, price, productSpecs) {
   const colours = stock.map((item) => item.colour);
   const quantity = stock.map((item) => item.qty);
   const count = colours.length;
@@ -24,6 +34,11 @@ function generateItems(code, productName, category, fabric, stock, mrp, price) {
       .filter((path) => path.includes(`${code}/${subcode}/`))
       .map((path) => images[path]),
     soldout: false,
+    excerpt: 'Some Short description',
+    disclaimer:
+      "* Since our sarees are hand-painted and handcrafted, minor irregularities such as slight misprints or variations in design are natural and add to the product's unique charm.",
+    description: 'This premium Chennur silk saree showcases traditional Indian craftsmanship through vibrant Kalamkari dyeing and hand block prints. Perfect for festive occasions, weddings, and celebrations. Comes with a matching blouse piece.',
+    productSpecs: productSpecs,
   }));
 }
 
@@ -42,7 +57,8 @@ const item25 = generateItems(
   'Bengal Soft Cotton',
   stock25,
   '950',
-  '750'
+  '750',
+  ChennurSilkSareeSpecs,
 );
 
 const stock26 = [
@@ -62,7 +78,8 @@ const item26 = generateItems(
   'Bengal Soft Cotton',
   stock26,
   '1,150',
-  '950'
+  '950',
+  ChennurSilkSareeSpecs,
 );
 
 const stock27 = [
@@ -110,7 +127,8 @@ const item27 = generateItems(
   'Kota Doriya',
   stock27,
   '1,300',
-  '1,100'
+  '1,100',
+  ChennurSilkSareeSpecs,
 );
 
 const stock28 = [
@@ -133,7 +151,8 @@ const item28 = generateItems(
   'MulMul Cotton',
   stock28,
   '1,200',
-  '1,000'
+  '1,000',
+  ChennurSilkSareeSpecs,
 );
 
 const stock29 = [
@@ -163,7 +182,8 @@ const item29 = generateItems(
   '120 Count Pure Cotton',
   stock29,
   '1,050',
-  '850'
+  '850',
+  ChennurSilkSareeSpecs,
 );
 
 const stock30 = [
@@ -185,7 +205,8 @@ const item30 = generateItems(
   'Chennur Silk',
   stock30,
   '2,400',
-  '2,200'
+  '2,200',
+  ChennurSilkSareeSpecs,
 );
 
 const stock31 = [
@@ -203,7 +224,8 @@ const item31 = generateItems(
   'Chennur Silk',
   stock31,
   '2,250',
-  '2,050'
+  '2,050',
+  ChennurSilkSareeSpecs,
 );
 
 const stock32 = [
@@ -217,7 +239,8 @@ const item32 = generateItems(
   'Georgette',
   stock32,
   '1,950',
-  '1,750'
+  '1,750',
+  ChennurSilkSareeSpecs,
 );
 
 const stock33 = [
@@ -232,7 +255,8 @@ const item33 = generateItems(
   'Georgette',
   stock33,
   '1,650',
-  '1,450'
+  '1,450',
+  ChennurSilkSareeSpecs,
 );
 
 const stock34 = [
@@ -249,22 +273,21 @@ const item34 = generateItems(
   'Kota Cotton',
   stock34,
   '1,650',
-  '1,450'
+  '1,450',
+  ChennurSilkSareeSpecs,
 );
 
 const products = [
-  {
-    item25: { ...item25 },
-    item26: { ...item26 },
-    item27: { ...item27 },
-    item28: { ...item28 },
-    item29: { ...item29 },
-    item30: { ...item30 },
-    item31: { ...item31 },
-    item32: { ...item32 },
-    item33: { ...item33 },
-    item34: { ...item34 },
-  },
+  ...item25,
+  ...item26,
+  ...item27,
+  ...item28,
+  ...item29,
+  ...item30,
+  ...item31,
+  ...item32,
+  ...item33,
+  ...item34,
 ];
 
 const trending = [...item26];
