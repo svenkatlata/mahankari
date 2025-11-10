@@ -18,7 +18,7 @@ const ProductCard = ({ item }) => {
   return (
     <Link to={`product-details/${productInfo}`}>
       <div
-        className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 shrink-0 w-60 relative"
+        className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 shrink-0 w-66 relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => {
           setIsHovered(false);
@@ -40,13 +40,13 @@ const ProductCard = ({ item }) => {
 
         {/* Product Info */}
         <div className="p-4">
-          <h3 className="text-[17px]/5 font-semibold">{item.product}</h3>
+          <h2 className="text-[17px]/5 font-semibold text-(--color-primary)">{item.product}</h2>
           <p className="text-gray-600 text-sm mt-1">Fabric: {item.fabric}</p>
           <div className="flex items-baseline gap-2 mt-2">
-            <p className="text-[17px] font-medium text-red-600">
+            <p className="text-[17px] font-medium text-(--color-primary)">
               ₹{item.price}/-
             </p>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-500 text-sm">
               <span className="line-through">₹{item.mrp}/-</span>
             </p>
           </div>
