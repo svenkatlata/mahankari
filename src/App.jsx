@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 
 import NavBar from "./components/Navbar";
 import ProductDetails from "./pages/ProductDetails";
+import ProductListing from "./pages/ProductListing";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           path="/product-details/:productInfo"
           element={<ProductDetails />}
         />
+        <Route path="/collections/" element={<ProductListing />} />
       </Routes>
       <Footer />
     </Router>
