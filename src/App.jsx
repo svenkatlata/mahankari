@@ -5,6 +5,8 @@ import AccountOverview from "./pages/AccountOverview";
 import Login from "./pages/Login";
 import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
+import Cart from "./pages/Cart";
+import PageNotFound from "./pages/PageNotFound";
 
 import NavBar from "./components/Navbar";
 import ScrollToTop from "./components/ScrolltoTop";
@@ -22,6 +24,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<AccountOverview />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/cart" element={<Cart />} />
         <Route
           path="/products/:productInfo"
           element={<ProductDetails />}
@@ -30,6 +33,7 @@ export default function App() {
           path="/collections/:productsListing"
           element={<ProductListing />}
         />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </Router>
