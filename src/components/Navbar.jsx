@@ -1,14 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo1 from "../assets/logo1.png";
 import { IoChevronDown, IoMenu } from "react-icons/io5";
 import { PiShoppingCartSimple, PiHeart, PiUser } from "react-icons/pi";
 
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
-  const submenuRef = React.useRef(null);
-  const mobileMenuRef = React.useRef(null);
+  const submenuRef = useRef(null);
+  const mobileMenuRef = useRef(null);
   const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsTop(window.scrollY < 50);
@@ -26,11 +27,13 @@ const Navbar = () => {
     mobileMenu.style.display = "block";
     mobileMenu.style.transform = "translateX(0)";
   };
+
   const closeMobileMenu = () => {
     const mobileMenu = mobileMenuRef.current;
     mobileMenu.style.display = "none";
     mobileMenu.style.transform = "translateX(-100%)";
   };
+
   const openSareeDropdown = () => {
     const sareeDropdown = submenuRef.current;
     sareeDropdown.style.display = "block";
@@ -73,13 +76,13 @@ const Navbar = () => {
                 HOME
               </Link>
             </li>
-            <li className="relative group hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
+            <li className="relative group hover:text-(--color-accent) hover:bg-white/5 space-y-1 px-4 py-2">
               <Link
                 onClick={openSareeDropdown}
                 onBlur={closeSareeDropdown}
-                className="flex justify-between gap-1 items-center"
+                className="flex justify-between gap-1 items-center m-0"
               >
-                <span className="tracking-wider">SAREES</span>
+                <span className="tracking-wider leading-none">SAREES</span>
                 <IoChevronDown />
               </Link>
               <ul
