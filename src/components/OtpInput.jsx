@@ -109,7 +109,7 @@ const OtpInput = ({ otpLength = 4, handleBackClick, phoneNumber }) => {
                   onChange={(e) => handleOtpChange(e, index)}
                   onClick={(e) => handleOtpClick(e, index)}
                   onKeyDown={(e) => handleOtpKeyDown(e, index)}
-                  className="block w-full rounded-md bg-gray-300/5 p-4 text-base outline-1 -outline-offset-1 outline-(--color-primary)/20 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-(--color-primary) focus:bg-white/5 sm:text-base/6 text-center"
+                  className="block w-full bg-gray-300/5 p-4 text-base outline-1 -outline-offset-1 outline-(--color-primary)/20 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-(--color-primary) focus:bg-white/5 sm:text-base/6 text-center"
                 />
               );
             })}
@@ -134,7 +134,7 @@ const OtpInput = ({ otpLength = 4, handleBackClick, phoneNumber }) => {
             id="get-otp-btn"
             hidden={!showContinueBtn}
             onClick={handleOtpSubmit}
-            className="flex w-full justify-center mt-5 rounded-md bg-(--color-primary) p-4 text-base/6 font-semibold text-(--color-secondary) hover:bg-(--color-topbar) hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-topbar) transition-colors ease-in-out duration-300"
+            className="flex w-full justify-center mt-5 bg-(--color-primary) p-4 text-base/6 font-semibold text-(--color-secondary) hover:bg-(--color-topbar) hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-topbar) transition-colors ease-in-out duration-300"
           >
             Continue
           </button>

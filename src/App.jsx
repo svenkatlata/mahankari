@@ -7,12 +7,14 @@ import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
 
 import NavBar from "./components/Navbar";
+import ScrollToTop from "./components/ScrolltoTop";
 import ProductDetails from "./pages/ProductDetails";
 import ProductListing from "./pages/ProductListing";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <NavBar />
       <div className="pt-27"></div>
       <Routes>

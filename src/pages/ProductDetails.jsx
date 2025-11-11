@@ -11,10 +11,6 @@ const ProductDetails = () => {
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
   const selectedProduct = allProducts.find((item) => {
     const productTitle = item.product.split(" ").join("-").toLowerCase();
     const product = `${productTitle}-${item.id.toLowerCase()}`;

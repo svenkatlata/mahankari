@@ -14,9 +14,6 @@ import PageNotFound from "./PageNotFound";
 
 const ProductListing = () => {
   const { productsListing } = useParams();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   let categoryurl = "";
   productsListing.split("-").forEach((categoryword, idx) => {
@@ -36,10 +33,6 @@ const ProductListing = () => {
   useEffect(() => {
     setFilteredProducts(allproductsData[categoryurl]);
   }, [productsListing]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [sortby, setSortBy] = useState("");
 

@@ -8,10 +8,6 @@ const AccountOverview = () => {
   const location = useLocation();
   const { phoneNumber } = location.state || {};
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
   const items = [
     {
       title: "Your Orders",
@@ -49,7 +45,7 @@ const AccountOverview = () => {
           <Link
             to={item.link}
             key={item.title}
-            className="flex items-start gap-4 bg-white rounded-2xl shadow-sm border border-gray-200 p-5 hover:shadow-md transition"
+            className="flex items-start gap-4 bg-white shadow-sm border border-gray-200 p-5 hover:shadow-md transition"
           >
             <div className="text-3xl text-(--color-topbar)">{item.icon}</div>
             <div>
