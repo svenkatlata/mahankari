@@ -298,6 +298,20 @@ const allProducts = [
   ...item33,
   ...item34,
 ];
+const sarees = [
+  ...item25,
+  ...item26,
+  ...item27,
+  ...item28,
+  ...item29,
+  ...item30,
+];
+const dresses = [
+  ...item32,
+  ...item33,
+  ...item34,
+];
+const dupattas = [...item31];
 
 const trending = [...item26];
 const newArrivals = [...item31];
@@ -310,6 +324,9 @@ const handloomCottonSarees = [...item29];
 const bengalSoftCottonSarees = [...item25, ...item26];
 
 export {
+  sarees,
+  dresses,
+  dupattas,
   allProducts,
   trending,
   newArrivals,

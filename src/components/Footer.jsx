@@ -73,10 +73,23 @@ const Footer = () => {
             </a> */}
           </div>
 
-          <form className="flex">
+          <form
+            className="flex"
+            onSubmit={(e) => {
+              e.preventDefault();
+              // handle subscribe logic here
+            }}
+          >
+            <label htmlFor="newsletter-email" className="sr-only">
+              Enter your email address
+            </label>
             <input
+              id="newsletter-email"
               type="email"
+              name="email"
               placeholder="Enter your email"
+              required
+              autoComplete="on"
               className="flex-1 px-3 bg-(--color-secondary) py-2 text-gray-800 focus:outline-none"
             />
             <button

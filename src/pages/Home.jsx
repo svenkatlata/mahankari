@@ -7,9 +7,6 @@ import Exclusive from "../components/Exclusive";
 import Trending from "../components/Trending";
 
 const Home = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
   return (
     <div>
       <Hero />

@@ -11,10 +11,6 @@ const Login = () => {
     document.getElementById("phoneNum").focus();
   }, []);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
   const handlePhoneNumChange = (e) => {
     const input = e.target.value;
     const enteredNums = input.replace(/\D/g, "");
@@ -81,7 +77,7 @@ const Login = () => {
                     maxLength={4}
                     disabled
                     value={"+91"}
-                    className="block w-18 rounded-md bg-gray-300/5 p-4 text-base outline-1 -outline-offset-1 outline-(--color-primary)/20 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-(--color-primary) focus:bg-white/5 sm:text-base/6 text-center"
+                    className="block w-18 bg-gray-300/5 p-4 text-base outline-1 -outline-offset-1 outline-(--color-primary)/20 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-(--color-primary) focus:bg-white/5 sm:text-base/6 text-center"
                   />
                   <input
                     id="phoneNum"
@@ -91,7 +87,7 @@ const Login = () => {
                     onChange={handlePhoneNumChange}
                     required
                     value={phoneNumber}
-                    className="block w-full rounded-md bg-gray-300/5 p-4 text-base outline-1 -outline-offset-1 outline-(--color-primary)/20 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-(--color-primary) focus:bg-white/5 sm:text-base/6"
+                    className="block w-full bg-gray-300/5 p-4 text-base outline-1 -outline-offset-1 outline-(--color-primary)/20 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-(--color-primary) focus:bg-white/5 sm:text-base/6"
                   />
                 </div>
               </div>
@@ -102,7 +98,7 @@ const Login = () => {
                   id="get-otp-btn"
                   onClick={handlePhoneNumSubmit}
                   hidden={!showOtpBtn}
-                  className="flex w-full justify-center mt-5 rounded-md bg-(--color-primary) p-4 text-base/6 font-semibold text-(--color-secondary) hover:bg-(--color-topbar) hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-topbar) transition-colors ease-in-out duration-300"
+                  className="flex w-full justify-center mt-5 bg-(--color-primary) p-4 text-base/6 font-semibold text-(--color-secondary) hover:bg-(--color-topbar) hover:cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-topbar) transition-colors ease-in-out duration-300"
                 >
                   Get OTP
                 </button>

@@ -50,7 +50,7 @@ const Categories = () => {
   };
 
   const viewAllCatogories = () => {
-    navigate("/collections/all-products");
+    navigate("/collections/sarees");
   };
 
   return (
