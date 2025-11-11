@@ -7,11 +7,9 @@ import Exclusive from "../components/Exclusive";
 import Trending from "../components/Trending";
 
 const Home = () => {
-  // Scroll to top when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-
   return (
     <div>
       <Hero />

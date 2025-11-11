@@ -40,7 +40,7 @@ const ProductCard = ({ item, onAddToCart }) => {
               e.stopPropagation();
               // onAddToCart?.(item);
             }}
-            className={`absolute top-2 right-2 bg-white text-(--color-primary) p-2 rounded-full shadow-md transition-all duration-300 z-20 ${
+            className={`absolute top-2 right-2 bg-white text-(--color-primary) p-2 rounded-full shadow-md transition-all duration-300 z-1 ${
               isHovered
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-2"

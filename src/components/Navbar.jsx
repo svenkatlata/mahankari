@@ -1,13 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import logo1 from "../assets/logo1.png";
-import {
-  FaUserCircle,
-  FaInstagram,
-  FaShoppingCart,
-  FaAngleDown,
-} from "react-icons/fa";
-import { IoMenu } from "react-icons/io5";
+import { IoChevronDown, IoMenu } from "react-icons/io5";
+import { PiShoppingCartSimple, PiHeart, PiUser } from "react-icons/pi";
 
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
@@ -56,53 +51,25 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-10 ${
+      className={`fixed top-0 left-0 w-full z-50 ${
         isTop ? "shadow-none" : "shadow-lg bg-white/80 backdrop-blur-md "
       } transition-shadow duration-300`}
     >
-      <div className="flex md:hidden justify-center bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) px-6 sm:px-10 text-[0.9rem] border-none items-center">
-        <span className="animate-pulse tracking-wider text-center">
+      <div className="flex justify-center bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) px-6 py-2 sm:px-10 text-sm border-none items-center">
+        <span className="animate-pulse tracking-wider text-center leading-none">
           🚚 FREE SHIPPING AVAILABLE FOR ORDERS WITHIN INDIA!!
         </span>
-      </div>
-      <div className="flex justify-between bg-(--color-topbar) text-(--color-secondary) font-(family-name:--font-primary) px-6 sm:px-10 text-[0.9rem] border-none items-center">
-        <a
-          href="https://www.instagram.com/mahankari.hyd/"
-          className="flex justify-between gap-2"
-        >
-          <FaInstagram className="h-5" />
-          <span className="tracking-wider">mahankari.hyd</span>
-        </a>
-        <span className="hidden md:block animate-pulse tracking-wider text-center px-4">
-          🚚 FREE SHIPPING AVAILABLE FOR ORDERS WITHIN INDIA!!
-        </span>
-        <div>
-          <ul className="flex justify-between gap-4">
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <Link to="/login" className="flex justify-between gap-2">
-                <FaUserCircle className="h-5" />
-                <span className="tracking-wider">Profile</span>
-              </Link>
-            </li>
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <a href="#" className="flex justify-between gap-2">
-                <FaShoppingCart className="h-5" />
-                <span className="tracking-wider">Cart</span>
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
       <div className="flex bg-(--color-primary) px-4 py-3 sm:px-10 justify-between items-center text-(--color-secondary)">
         <Link to="/">
-          <img src={logo1} alt="Mahankari" className="h-18" />
+          <img src={logo1} alt="Mahankari" className="h-14" />
         </Link>
 
         <nav className="relative">
           {/* Desktop Menu */}
-          <ul className="hidden lg:flex justify-between gap-8">
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <Link to="/" className="tracking-wider">
+          <ul className="hidden lg:flex justify-between">
+            <li className="flex items-center hover:text-(--color-accent) hover:bg-white/5 space-y-1 px-4 py-2">
+              <Link to="/" className="tracking-wider leading-none">
                 HOME
               </Link>
             </li>
@@ -208,29 +175,64 @@ const Navbar = () => {
                 </li>
               </ul>
             </li>
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <a href="#" className="tracking-wider">
+            <li className="flex items-center hover:text-(--color-accent) hover:bg-white/5 space-y-1 px-4 py-2">
+              <a href="#" className="tracking-wider leading-none">
                 DRESSES
               </a>
             </li>
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <a href="#" className="tracking-wider">
+            <li className="flex items-center hover:text-(--color-accent) hover:bg-white/5 space-y-1 px-4 py-2">
+              <a href="#" className="tracking-wider leading-none">
                 DUPATTAS
               </a>
             </li>
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
-              <Link to="/contact" className="tracking-wider">
+            <li className="flex items-center hover:text-(--color-accent) hover:bg-white/5 space-y-1 px-4 py-2">
+              <Link to="/contact" className="tracking-wider leading-none">
                 CONTACT
               </Link>
             </li>
           </ul>
-          <div className="flex lg:hidden hover:text-(--color-accent)">
+        </nav>
+        <ul className="flex justify-center">
+          <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1  p-2 md:px-4">
+            <Link
+              to="/login"
+              className="flex flex-col items-center justify-center gap-1"
+            >
+              <PiUser className="text-xl" />
+              <span className="hidden lg:block text-sm tracking-wider leading-none">
+                Profile
+              </span>
+            </Link>
+          </li>
+          <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1  p-2 md:px-4">
+            <Link
+              to="/login"
+              className="flex flex-col items-center justify-center gap-1"
+            >
+              <PiHeart className="text-xl" />
+              <span className="hidden lg:block text-sm tracking-wider leading-none">
+                Wishlist
+              </span>
+            </Link>
+          </li>
+          <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 md:px-4">
+            <a
+              href="#"
+              className="flex flex-col items-center justify-center gap-1"
+            >
+              <PiShoppingCartSimple className="text-xl" />
+              <span className="hidden lg:block text-sm tracking-wider leading-none">
+                Cart
+              </span>
+            </a>
+          </li>
+          <li className="flex lg:hidden hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 md:px-4">
             {/* Hamburger */}
             <a
               href="#"
               onClick={openMobileMenu}
               onBlur={closeMobileMenu}
-              className="text-[30px]"
+              className="text-xl"
             >
               <IoMenu />
             </a>
@@ -299,8 +301,8 @@ const Navbar = () => {
                 CONTACT
               </Link>
             </div>
-          </div>
-        </nav>
+          </li>
+        </ul>
       </div>
     </header>
   );
