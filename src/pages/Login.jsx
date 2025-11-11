@@ -11,9 +11,9 @@ const Login = () => {
     document.getElementById("phoneNum").focus();
   }, []);
 
-      useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handlePhoneNumChange = (e) => {
     const input = e.target.value;

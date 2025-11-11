@@ -10,13 +10,10 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 import * as allproductsData from "../components/ProductsData";
+import PageNotFound from "./PageNotFound";
 
 const ProductListing = () => {
-  const [inStockOnly, setInStockOnly] = useState(false);
   const { productsListing } = useParams();
-
-  console.log("productsListing param:", productsListing);
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -31,8 +28,18 @@ const ProductListing = () => {
     }
   });
 
-  const filteredProducts = allproductsData[categoryurl];
-  console.log("filteredProducts:", filteredProducts);
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const [filteredProducts, setFilteredProducts] = useState(
+    allproductsData[categoryurl]
+  );
+
+  useEffect(() => {
+    setFilteredProducts(allproductsData[categoryurl]);
+  }, [productsListing]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [sortby, setSortBy] = useState("");
 
@@ -40,11 +47,16 @@ const ProductListing = () => {
     setSortBy(event.target.value);
   };
 
-  //   const filteredProducts = inStockOnly
-  //     ? products.filter((p) => p.inStock)
-  //     : products;
+  const onHandleInStock = (isInStockOnly) => {
+    setInStockOnly(isInStockOnly);
+    const inStockProducts = isInStockOnly
+      ? allproductsData[categoryurl].filter((product) => product.quantity > 0)
+      : allproductsData[categoryurl];
 
-  return (
+    setFilteredProducts(inStockProducts);
+  };
+
+  return filteredProducts && filteredProducts.length ? (
     <div className="min-h-screen px-6 py-16 flex flex-col items-center">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* ---------- Sidebar Filters ---------- */}
@@ -57,7 +69,7 @@ const ProductListing = () => {
               <span>Availability</span>
             </button>
             <div className="flex items-center gap-2">
-              <ToggleSwitch />
+              <ToggleSwitch handleInStock={onHandleInStock} />
             </div>
           </div>
 
@@ -69,7 +81,7 @@ const ProductListing = () => {
         <main className="md:col-span-3">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-gray-700">
-              {filteredProducts.length} Products
+              {filteredProducts?.length} Products
             </h2>
             <FormControl
               variant="outlined"
@@ -115,6 +127,8 @@ const ProductListing = () => {
         </main>
       </div>
     </div>
+  ) : (
+    <PageNotFound />
   );
 };
 

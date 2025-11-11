@@ -6,9 +6,9 @@ import { PiShoppingCartSimple, PiHeart, PiUser } from "react-icons/pi";
 
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
-  const mobileMenuRef = useRef(null);
-  const sareeDropdownRef = useRef(null);
-
+  const submenuRef = React.useRef(null);
+  const mobileMenuRef = React.useRef(null);
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
       setIsTop(window.scrollY < 50);
@@ -22,31 +22,35 @@ const Navbar = () => {
   }, []);
 
   const openMobileMenu = () => {
-    if (mobileMenuRef.current) {
-      mobileMenuRef.current.style.display = "block";
-      mobileMenuRef.current.style.transform = "translateX(0)";
-    }
+    const mobileMenu = mobileMenuRef.current;
+    mobileMenu.style.display = "block";
+    mobileMenu.style.transform = "translateX(0)";
   };
 
   const closeMobileMenu = () => {
-    if (mobileMenuRef.current) {
-      mobileMenuRef.current.style.display = "none";
-      mobileMenuRef.current.style.transform = "translateX(-100%)";
-    }
+    const mobileMenu = mobileMenuRef.current;
+    mobileMenu.style.display = "none";
+    mobileMenu.style.transform = "translateX(-100%)";
   };
 
   const openSareeDropdown = () => {
-    if (sareeDropdownRef.current) {
-      sareeDropdownRef.current.style.display = "block";
-      sareeDropdownRef.current.style.transform = "translateX(0)";
-    }
+    const sareeDropdown = submenuRef.current;
+    sareeDropdown.style.display = "block";
+    sareeDropdown.style.transform = "translateX(0)";
   };
   const closeSareeDropdown = () => {
-    if (sareeDropdownRef.current) {
-      sareeDropdownRef.current.style.display = "none";
-      sareeDropdownRef.current.style.transform = "translateX(-100%)";
-    }
+    const sareeDropdown = submenuRef.current;
+    sareeDropdown.style.display = "none";
+    sareeDropdown.style.transform = "translateX(-100%)";
   };
+
+  const handleDropdownClick = (event, redirecturl) => {
+    // event.stopPropagation();
+    console.log("handleDropdownClick called", event);
+    closeSareeDropdown();
+    navigate(redirecturl);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 ${
@@ -71,46 +75,105 @@ const Navbar = () => {
                 HOME
               </Link>
             </li>
-            <li className="flex items-center relative group hover:text-(--color-accent) hover:bg-white/5 space-y-1 px-4 py-2">
-              <a
+            <li className="relative group hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 rounded-md">
+              <Link
                 onClick={openSareeDropdown}
                 onBlur={closeSareeDropdown}
-                onMouseEnter={openSareeDropdown}
-                onMouseLeave={closeSareeDropdown}
-                href="#"
-                className="flex justify-between gap-1 items-center m-0"
+                className="flex justify-between gap-1 items-center"
               >
-                <span className="tracking-wider leading-none">SAREES</span>
+                <span className="tracking-wider">SAREES</span>
                 <IoChevronDown />
-              </a>
+              </Link>
               <ul
-                id="SareeDropdown"
-                ref={sareeDropdownRef}
+                ref={submenuRef}
                 className="absolute left-0 top-full hidden w-56 flex-col bg-(--color-primary) text-(--color-secondary) shadow-lg z-50 group-hover:flex p-2"
               >
-                <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
-                  <a href="#">Chennur Silk Sarees</a>
+                <li
+                  className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md"
+                  onClick={(event) =>
+                    handleDropdownClick(
+                      event,
+                      "/collections/chennur-silk-sarees"
+                    )
+                  }
+                >
+                  <Link>Chennur Silk Sarees</Link>
                 </li>
-                <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
-                  <a href="#">Kota Doriya Sarees</a>
+                <li
+                  className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md"
+                  onClick={(event) =>
+                    handleDropdownClick(
+                      event,
+                      "/collections/kota-doriya-sarees"
+                    )
+                  }
+                >
+                  <Link>Kota Doriya Sarees</Link>
                 </li>
-                <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
-                  <a href="#">Malai Cotton Sarees</a>
+                <li
+                  className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md"
+                  onClick={(event) =>
+                    handleDropdownClick(
+                      event,
+                      "/collections/malai-cotton-sarees"
+                    )
+                  }
+                >
+                  <Link>Malai Cotton Sarees</Link>
                 </li>
-                <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
-                  <a href="#">Handloom Cotton Sarees</a>
+                <li
+                  className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md"
+                  onClick={(event) =>
+                    handleDropdownClick(
+                      event,
+                      "/collections/handloom-cotton-sarees"
+                    )
+                  }
+                >
+                  <Link>Handloom Cotton Sarees</Link>
                 </li>
-                <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
-                  <a href="#">Bengal Soft Cotton Sarees</a>
+                <li
+                  className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md"
+                  onClick={(event) =>
+                    handleDropdownClick(
+                      event,
+                      "/collections/bengal-soft-cotton-sarees"
+                    )
+                  }
+                >
+                  <Link>Bengal Soft Cotton Sarees</Link>
                 </li>
-                <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
-                  <a href="#">Kota Cotton Sarees</a>
+                <li
+                  className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md"
+                  onClick={(event) =>
+                    handleDropdownClick(
+                      event,
+                      "/collections/kota-cotton-sarees"
+                    )
+                  }
+                >
+                  <Link>Kota Cotton Sarees</Link>
                 </li>
-                <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
-                  <a href="#">Munga Kota Cotton Sarees</a>
+                <li
+                  className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md"
+                  onClick={(event) =>
+                    handleDropdownClick(
+                      event,
+                      "/collections/munga-kota-cotton-sarees"
+                    )
+                  }
+                >
+                  <Link>Munga Kota Cotton Sarees</Link>
                 </li>
-                <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
-                  <a href="#">Pure Cotton Sarees</a>
+                <li
+                  className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md"
+                  onClick={(event) =>
+                    handleDropdownClick(event, "/collections/pure-kota-sarees")
+                  }
+                >
+                  <Link to="/collections/pure-kota-sarees">
+                    Pure Cotton Sarees
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -177,7 +240,6 @@ const Navbar = () => {
             </a>
             {/* Mobile Menu */}
             <div
-              id="mobile-menu"
               ref={mobileMenuRef}
               className="right-0 top-full hidden w-60 flex-col bg-(--color-primary) text-(--color-secondary) shadow-lg z-50 group-hover:flex p-2 absolute"
             >
@@ -189,7 +251,7 @@ const Navbar = () => {
               </Link>
               <a
                 href="#"
-                className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
+                className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:t-(--color-accent) tracking-wider"
               >
                 SAREES
               </a>
