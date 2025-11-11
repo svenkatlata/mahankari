@@ -286,7 +286,7 @@ const item34 = generateItems(
   ChennurSilkSareeSpecs
 );
 
-const products = [
+const allProducts = [
   ...item25,
   ...item26,
   ...item27,
@@ -310,7 +310,7 @@ const handloomCottonSarees = [...item29];
 const bengalSoftCottonSarees = [...item25, ...item26];
 
 export {
-  products,
+  allProducts,
   trending,
   newArrivals,
   exclusive,

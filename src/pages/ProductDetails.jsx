@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { products } from "../components/ProductsData";
+import { allProducts } from "../components/ProductsData";
 import { IoRemove, IoAdd, IoHeart, IoHeartOutline } from "react-icons/io5";
 import ZoomCursor from "../components/ZoomCursor";
 import FullscreenCarousel from "../components/FullscreenCarousel";
@@ -14,7 +14,7 @@ const ProductDetails = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const selectedProduct = products.find((item) => {
+  const selectedProduct = allProducts.find((item) => {
     const productTitle = item.product.split(" ").join("-").toLowerCase();
     const product = `${productTitle}-${item.id.toLowerCase()}`;
     return product === productInfo;

@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo1 from "../assets/logo1.png";
 import { IoChevronDown, IoMenu } from "react-icons/io5";
-import { PiShoppingCartSimple, PiHeart, PiUser} from "react-icons/pi";
-
+import { PiShoppingCartSimple, PiHeart, PiUser } from "react-icons/pi";
 
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
+  const mobileMenuRef = useRef(null);
+  const sareeDropdownRef = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsTop(window.scrollY < 50);
@@ -20,24 +22,30 @@ const Navbar = () => {
   }, []);
 
   const openMobileMenu = () => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenu.style.display = "block";
-    mobileMenu.style.transform = "translateX(0)";
+    if (mobileMenuRef.current) {
+      mobileMenuRef.current.style.display = "block";
+      mobileMenuRef.current.style.transform = "translateX(0)";
+    }
   };
+
   const closeMobileMenu = () => {
-    const mobileMenu = document.getElementById("mobile-menu");
-    mobileMenu.style.display = "none";
-    mobileMenu.style.transform = "translateX(-100%)";
+    if (mobileMenuRef.current) {
+      mobileMenuRef.current.style.display = "none";
+      mobileMenuRef.current.style.transform = "translateX(-100%)";
+    }
   };
+
   const openSareeDropdown = () => {
-    const sareeDropdown = document.getElementById("SareeDropdown");
-    sareeDropdown.style.display = "block";
-    sareeDropdown.style.transform = "translateX(0)";
+    if (sareeDropdownRef.current) {
+      sareeDropdownRef.current.style.display = "block";
+      sareeDropdownRef.current.style.transform = "translateX(0)";
+    }
   };
   const closeSareeDropdown = () => {
-    const sareeDropdown = document.getElementById("SareeDropdown");
-    sareeDropdown.style.display = "none";
-    sareeDropdown.style.transform = "translateX(-100%)";
+    if (sareeDropdownRef.current) {
+      sareeDropdownRef.current.style.display = "none";
+      sareeDropdownRef.current.style.transform = "translateX(-100%)";
+    }
   };
   return (
     <header
@@ -67,14 +75,17 @@ const Navbar = () => {
               <a
                 onClick={openSareeDropdown}
                 onBlur={closeSareeDropdown}
+                onMouseEnter={openSareeDropdown}
+                onMouseLeave={closeSareeDropdown}
                 href="#"
-                className="flex justify-between gap-1 items-center leading-none"
+                className="flex justify-between gap-1 items-center m-0"
               >
                 <span className="tracking-wider leading-none">SAREES</span>
                 <IoChevronDown />
               </a>
               <ul
                 id="SareeDropdown"
+                ref={sareeDropdownRef}
                 className="absolute left-0 top-full hidden w-56 flex-col bg-(--color-primary) text-(--color-secondary) shadow-lg z-50 group-hover:flex p-2"
               >
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2 rounded-md">
@@ -120,26 +131,41 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-          <ul className="flex justify-center">
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1  p-2 md:px-4">
-              <Link to="/login" className="flex flex-col items-center justify-center gap-1">
-                <PiUser className="text-xl" />
-                <span className="hidden lg:block text-sm tracking-wider leading-none">Profile</span>
-              </Link>
-            </li>
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1  p-2 md:px-4">
-              <Link to="/login" className="flex flex-col items-center justify-center gap-1">
-                <PiHeart  className="text-xl" />
-                <span className="hidden lg:block text-sm tracking-wider leading-none">Wishlist</span>
-              </Link>
-            </li>
-            <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 md:px-4">
-              <a href="#" className="flex flex-col items-center justify-center gap-1">
-                <PiShoppingCartSimple className="text-xl" />
-                <span className="hidden lg:block text-sm tracking-wider leading-none">Cart</span>
-              </a>
-            </li>
-            <li className="flex lg:hidden hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 md:px-4">
+        <ul className="flex justify-center">
+          <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1  p-2 md:px-4">
+            <Link
+              to="/login"
+              className="flex flex-col items-center justify-center gap-1"
+            >
+              <PiUser className="text-xl" />
+              <span className="hidden lg:block text-sm tracking-wider leading-none">
+                Profile
+              </span>
+            </Link>
+          </li>
+          <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1  p-2 md:px-4">
+            <Link
+              to="/login"
+              className="flex flex-col items-center justify-center gap-1"
+            >
+              <PiHeart className="text-xl" />
+              <span className="hidden lg:block text-sm tracking-wider leading-none">
+                Wishlist
+              </span>
+            </Link>
+          </li>
+          <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 md:px-4">
+            <a
+              href="#"
+              className="flex flex-col items-center justify-center gap-1"
+            >
+              <PiShoppingCartSimple className="text-xl" />
+              <span className="hidden lg:block text-sm tracking-wider leading-none">
+                Cart
+              </span>
+            </a>
+          </li>
+          <li className="flex lg:hidden hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 md:px-4">
             {/* Hamburger */}
             <a
               href="#"
@@ -152,6 +178,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <div
               id="mobile-menu"
+              ref={mobileMenuRef}
               className="right-0 top-full hidden w-60 flex-col bg-(--color-primary) text-(--color-secondary) shadow-lg z-50 group-hover:flex p-2 absolute"
             >
               <Link
@@ -214,8 +241,8 @@ const Navbar = () => {
                 CONTACT
               </Link>
             </div>
-            </li>
-          </ul>
+          </li>
+        </ul>
       </div>
     </header>
   );
