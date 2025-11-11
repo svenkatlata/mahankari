@@ -39,7 +39,7 @@ function generateItems(
     images: Object.keys(images)
       .filter((path) => path.includes(`${code}/${item.subcode}/`))
       .map((path) => images[path]),
-    isSoldOut: (item.qty+2) === 0,
+    isSoldOut: item.qty + 2 === 0,
     excerpt: "Some Short description",
     disclaimer:
       "* Since our sarees are hand-painted and handcrafted, minor irregularities such as slight misprints or variations in design are natural and add to the product's unique charm.",
@@ -286,7 +286,7 @@ const item34 = generateItems(
   ChennurSilkSareeSpecs
 );
 
-const products = [
+const allProducts = [
   ...item25,
   ...item26,
   ...item27,
@@ -310,7 +310,7 @@ const handloomCottonSarees = [...item29];
 const bengalSoftCottonSarees = [...item25, ...item26];
 
 export {
-  products,
+  allProducts,
   trending,
   newArrivals,
   exclusive,

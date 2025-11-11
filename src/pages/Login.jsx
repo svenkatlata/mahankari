@@ -11,6 +11,11 @@ const Login = () => {
     document.getElementById("phoneNum").focus();
   }, []);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handlePhoneNumChange = (e) => {
     const input = e.target.value;
     const enteredNums = input.replace(/\D/g, "");

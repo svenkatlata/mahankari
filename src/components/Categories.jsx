@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import category1 from "../assets/category-1.png";
 import category2 from "../assets/category-2.png";
@@ -11,6 +11,8 @@ import category7 from "../assets/category-7.png";
 import category8 from "../assets/category-8.png";
 
 const Categories = () => {
+  const navigate = useNavigate();
+
   const categories = [
     { id: 1, image: category1, title: "Chennur Silk Sarees" },
     { id: 2, image: category2, title: "Kota Doriya Sarees" },
@@ -47,6 +49,10 @@ const Categories = () => {
     });
   };
 
+  const viewAllCatogories = () => {
+    navigate("/collections/all-products");
+  };
+
   return (
     <section>
       <div className="p-10 pb-20 text-center text-(--color-primary)">
@@ -59,7 +65,10 @@ const Categories = () => {
         </div>
         {/* View All Button */}
         <div className="flex justify-center mt-12">
-          <button className="bg-(--color-primary) hover:bg-(--color-topbar) text-white font-medium py-3 px-8 transition-colors duration-300 cursor-pointer">
+          <button
+            className="bg-(--color-primary) hover:bg-(--color-topbar) text-white font-medium py-3 px-8 transition-colors duration-300 cursor-pointer"
+            onClick={viewAllCatogories}
+          >
             View All
           </button>
         </div>

@@ -27,7 +27,7 @@ const ProductCard = ({ item, onAddToCart }) => {
       >
         {/* Sold Out Badge */}
         {item.isSoldOut && (
-          <div className="absolute top-2 left-2 bg-white text-black text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-md z-20 flex items-center justify-center font-sans leading-none tracking-wide">
+          <div className="absolute top-2 left-2 bg-white text-black text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-md z-1 flex items-center justify-center font-sans leading-none tracking-wide">
             SOLD OUT
           </div>
         )}
