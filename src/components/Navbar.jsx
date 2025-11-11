@@ -80,7 +80,7 @@ const Navbar = () => {
                 className="flex justify-between gap-1 items-center"
               >
                 <span className="tracking-wider">SAREES</span>
-                <FaAngleDown />
+                <IoChevronDown />
               </Link>
               <ul
                 ref={submenuRef}
@@ -249,7 +249,7 @@ const Navbar = () => {
               </Link>
               <a
                 href="#"
-                className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
+                className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:t-(--color-accent) tracking-wider"
               >
                 SAREES
               </a>

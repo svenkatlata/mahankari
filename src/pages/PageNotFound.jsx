@@ -10,10 +10,10 @@ const PageNotFound = () => {
         navigation or the button below to go back to our website.
       </p>
       <Link
-        to="/collections/all-collections"
+        to="/"
         className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
       >
-        Go Back to All Collections
+        Continue Shopping
       </Link>
     </div>
   );
