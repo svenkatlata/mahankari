@@ -1,20 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import pagenotfound from "../assets/pagenotfound.png"
 
 const PageNotFound = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-center">
-      <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
-      <p className="text-xl text-gray-600 mb-6">
-        Oops! The page you are looking for does not exist. Please use the
-        navigation or the button below to go back to our website.
+    <div className="w-full flex justify-center">
+    <div className="max-w-3xl min-h-150 flex flex-col items-center justify-center text-center">
+      <img src={pagenotfound} alt="404 - PAGE NOT FOUND" className="h-30 sm:h-50" />
+      <p className="text-base sm:text-lg text-gray-600 mx-10 sm:mx-20 mt-5 mb-10">
+        The page you are looking for might have been removed, 
+        had its name changed or is temporarily unavailable.
       </p>
       <Link
         to="/"
-        className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+        className="px-6 py-3 bg-(--color-primary) text-white hover:bg-(--color-topbar) transition"
       >
-        Continue Shopping
+        GO TO HOMEPAGE
       </Link>
+    </div>
     </div>
   );
 };
