@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import Benefits from "../components/Benefits";
 import Categories from "../components/Categories";
@@ -7,9 +7,9 @@ import Exclusive from "../components/Exclusive";
 import Trending from "../components/Trending";
 
 const Home = () => {
-    useEffect(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div>
       <Hero />
