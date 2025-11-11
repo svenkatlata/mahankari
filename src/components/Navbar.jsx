@@ -7,7 +7,7 @@ import { PiShoppingCartSimple, PiHeart, PiUser } from "react-icons/pi";
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const submenuRef = useRef(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
 
   useEffect(() => {
@@ -22,31 +22,11 @@ const Navbar = () => {
     };
   }, []);
 
-  const openMobileMenu = () => {
-    const mobileMenu = mobileMenuRef.current;
-    mobileMenu.style.display = "block";
-    mobileMenu.style.transform = "translateX(0)";
-  };
-
-  const closeMobileMenu = () => {
-    const mobileMenu = mobileMenuRef.current;
-    mobileMenu.style.display = "none";
-    mobileMenu.style.transform = "translateX(-100%)";
-  };
-
-  // const openSareeDropdown = () => {
-  //   const sareeDropdown = submenuRef.current;
-  //   sareeDropdown.style.display = "block";
-  //   sareeDropdown.style.transform = "translateX(0)";
-  // };
-  // const closeSareeDropdown = () => {
-  //   const sareeDropdown = submenuRef.current;
-  //   sareeDropdown.style.display = "none";
-  //   sareeDropdown.style.transform = "translateX(-100%)";
-  // };
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
   const openDropdown = () => setIsDropdownOpen(true);
   const closeDropdown = () => setIsDropdownOpen(false);
+
+  const openMobileMenu = () => setIsMobileMenuOpen(true);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <header
@@ -86,60 +66,91 @@ const Navbar = () => {
                 <IoChevronDown />
               </Link>
               <ul
-                ref={submenuRef}
                 className={`absolute left-0 top-full w-56 flex-col bg-(--color-primary) text-(--color-secondary) shadow-lg z-50 p-2 ${
-                  isDropdownOpen ? "group-hover:flex translateX(0)" : "hidden translateX(-100%)"
+                  isDropdownOpen
+                    ? "group-hover:flex translateX(0)"
+                    : "hidden translateX(-100%)"
                 }`}
               >
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <Link to="/collections/chennur-silk-sarees" onClick={closeDropdown}>
+                  <Link
+                    to="/collections/chennur-silk-sarees"
+                    onClick={closeDropdown}
+                  >
                     Chennur Silk Sarees
                   </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <Link to="/collections/kota-doriya-sarees"  onClick={closeDropdown}>
+                  <Link
+                    to="/collections/kota-doriya-sarees"
+                    onClick={closeDropdown}
+                  >
                     Kota Doriya Sarees
                   </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <Link to="/collections/malai-cotton-sarees"  onClick={closeDropdown}>
+                  <Link
+                    to="/collections/malai-cotton-sarees"
+                    onClick={closeDropdown}
+                  >
                     Malai Cotton Sarees
                   </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <Link to="/collections/handloom-cotton-sarees"  onClick={closeDropdown}>
+                  <Link
+                    to="/collections/handloom-cotton-sarees"
+                    onClick={closeDropdown}
+                  >
                     Handloom Cotton Sarees
                   </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <Link to="/collections/bengal-soft-cotton-sarees"  onClick={closeDropdown}>
+                  <Link
+                    to="/collections/bengal-soft-cotton-sarees"
+                    onClick={closeDropdown}
+                  >
                     Bengal Soft Cotton Sarees
                   </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <Link to="/collections/kota-cotton-sarees"  onClick={closeDropdown}>
+                  <Link
+                    to="/collections/kota-cotton-sarees"
+                    onClick={closeDropdown}
+                  >
                     Kota Cotton Sarees
                   </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <Link to="/collections/munga-kota-cotton-sarees"  onClick={closeDropdown}>
+                  <Link
+                    to="/collections/munga-kota-cotton-sarees"
+                    onClick={closeDropdown}
+                  >
                     Munga Kota Cotton Sarees
                   </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <Link to="/collections/pure-cotton-sarees"  onClick={closeDropdown}>
+                  <Link
+                    to="/collections/pure-cotton-sarees"
+                    onClick={closeDropdown}
+                  >
                     Pure Cotton Sarees
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="flex items-center hover:text-(--color-accent) hover:bg-white/5 space-y-1 px-4 py-2">
-              <Link to="/collections/dresses" className="tracking-wider leading-none">
+              <Link
+                to="/collections/dresses"
+                className="tracking-wider leading-none"
+              >
                 DRESSES
               </Link>
             </li>
             <li className="flex items-center hover:text-(--color-accent) hover:bg-white/5 space-y-1 px-4 py-2">
-              <Link to="/collections/dupattas" className="tracking-wider leading-none">
+              <Link
+                to="/collections/dupattas"
+                className="tracking-wider leading-none"
+              >
                 DUPATTAS
               </Link>
             </li>
@@ -174,84 +185,124 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 md:px-4">
-            <a
-              href="#"
+            <Link
+              to="/cart"
               className="flex flex-col items-center justify-center gap-1"
             >
               <PiShoppingCartSimple className="text-xl" />
               <span className="hidden lg:block text-sm tracking-wider leading-none">
                 Cart
               </span>
-            </a>
+            </Link>
           </li>
           <li className="flex lg:hidden hover:text-(--color-accent) hover:bg-white/5 space-y-1 p-2 md:px-4">
             {/* Hamburger */}
-            <a
-              href="#"
-              onClick={openMobileMenu}
-              onBlur={closeMobileMenu}
-              className="text-xl"
-            >
+            <a href="#" onClick={openMobileMenu} className="text-xl">
               <IoMenu />
             </a>
             {/* Mobile Menu */}
             <div
-              ref={mobileMenuRef}
-              className="right-0 top-full hidden w-60 flex-col bg-(--color-primary) text-(--color-secondary) shadow-lg z-50 group-hover:flex p-2 absolute"
+              className={`absolute right-0 top-full w-60 flex-col bg-(--color-primary) text-(--color-secondary) shadow-lg z-50 p-2 transition-transform duration-300 ${
+                isMobileMenuOpen
+                  ? "flex translate-x-0"
+                  : "hidden -translate-x-full"
+              }`}
             >
               <Link
                 to="/"
+                onClick={closeMobileMenu}
                 className="block space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
               >
                 HOME
               </Link>
-              <a
-                href="#"
+              <Link
+                to="/collections/sarees"
+                onClick={closeMobileMenu}
                 className="block space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:t-(--color-accent) tracking-wider"
               >
                 SAREES
-              </a>
+              </Link>
               <ul
                 id="SareeMenu"
                 className="left-0 top-full flex-col bg-white/5 text-(--color-secondary) group-hover:flex p-2"
               >
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <a href="#">Chennur Silk Sarees</a>
+                  <Link
+                    to="/collections/chennur-silk-sarees"
+                    onClick={closeMobileMenu}
+                  >
+                    Chennur Silk Sarees
+                  </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <a href="#">Kota Doriya Sarees</a>
+                  <Link
+                    to="/collections/kota-doriya-sarees"
+                    onClick={closeMobileMenu}
+                  >
+                    Kota Doriya Sarees
+                  </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <a href="#">Malai Cotton Sarees</a>
+                  <Link
+                    to="/collections/malai-cotton-sarees"
+                    onClick={closeMobileMenu}
+                  >
+                    Malai Cotton Sarees
+                  </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <a href="#">Handloom Cotton Sarees</a>
+                  <Link
+                    to="/collections/handloom-cotton-sarees"
+                    onClick={closeMobileMenu}
+                  >
+                    Handloom Cotton Sarees
+                  </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <a href="#">Bengal Soft Cotton Sarees</a>
+                  <Link
+                    to="/collections/bengal-soft-cotton-sarees"
+                    onClick={closeMobileMenu}
+                  >
+                    Bengal Soft Cotton Sarees
+                  </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <a href="#">Kota Cotton Sarees</a>
+                  <Link
+                    to="/collections/kota-cotton-sarees"
+                    onClick={closeMobileMenu}
+                  >
+                    Kota Cotton Sarees
+                  </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <a href="#">Munga Kota Cotton Sarees</a>
+                  <Link
+                    to="/collections/munga-kota-cotton-sarees"
+                    onClick={closeMobileMenu}
+                  >
+                    Munga Kota Cotton Sarees
+                  </Link>
                 </li>
                 <li className="hover:bg-white/5 hover:text-(--color-accent) transition-colors duration-200 space-y-1 p-2">
-                  <a href="#">Pure Cotton Sarees</a>
+                  <Link
+                    to="/collections/pure-cotton-sarees"
+                    onClick={closeMobileMenu}
+                  >
+                    Pure Cotton Sarees
+                  </Link>
                 </li>
               </ul>
-              <a
-                href="#"
+              <Link
+                to="/collections/dresses"
                 className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
               >
                 DRESSES
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/collections/dupattas"
                 className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
               >
                 DUPATTAS
-              </a>
+              </Link>
               <Link
                 to="/contact"
                 className="block rounded-md space-y-1 p-2 text-base font-medium hover:bg-white/5 hover:text-(--color-accent) tracking-wider"
