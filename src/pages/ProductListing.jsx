@@ -31,6 +31,7 @@ const ProductListing = () => {
   const [filteredProducts, setFilteredProducts] = useState(
     allproductsData[categoryurl]
   );
+  const [filteredFabrics, setFilteredFabrics] = useState([]);
 
   useEffect(() => {
     setFilteredProducts(allproductsData[categoryurl]);
@@ -50,13 +51,15 @@ const ProductListing = () => {
 
     setFilteredProducts(inStockProducts);
   };
-  console.log("all sarees", allproductsData[categoryurl]);
+  //   console.log("all sarees", allproductsData[categoryurl]);
 
   const onFabricFilter = (selectedFabrics) => {
     if (selectedFabrics.length === 0) {
       setFilteredProducts(allproductsData[categoryurl]);
+      setFilteredFabrics([]);
       return;
     }
+    setFilteredFabrics([...selectedFabrics]);
     const fabricFilteredProducts = allproductsData[categoryurl].filter(
       (product) => selectedFabrics.includes(product.fabric)
     );
@@ -65,7 +68,7 @@ const ProductListing = () => {
 
   return filteredProducts && filteredProducts.length ? (
     <div className="min-h-screen px-6 py-16 flex flex-col items-center">
-      <FilterChips />
+      <FilterChips selectedFabrics={filteredFabrics} />
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* ---------- Sidebar Filters ---------- */}
         <aside className="bg-white p-5 h-fit border border-transparent border-r-gray-300">

@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const FilterChips = () => {
-  const [filters, setFilters] = useState(["25 inch - 28 inch", "Curved"]);
+const FilterChips = ({ selectedFabrics }) => {
+  const [filters, setFilters] = useState([...selectedFabrics]);
+
+  useEffect(() => {
+    setFilters([...selectedFabrics]);
+  }, [selectedFabrics]);
 
   const removeFilter = (filter) => {
-    setFilters(filters.filter((item) => item !== filter));
+    const filteredFilters = filters.filter((item) => item !== filter);
+    setFilters(filteredFilters);
   };
 
   return (

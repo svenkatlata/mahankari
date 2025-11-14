@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FabricFilter = ({ onFabricFilter }) => {
   const [selected, setSelected] = useState([]);
@@ -11,13 +11,15 @@ const FabricFilter = ({ onFabricFilter }) => {
     "Bengal Soft Cotton",
     "Kota Cotton",
   ];
-
-  const handleChange = (material) => {
-    if (selected.includes(material)) {
-      setSelected(selected.filter((item) => item !== material));
+  const handleChange = (fabric) => {
+    if (selected.includes(fabric)) {
+      const selectedFabrics = selected.filter((item) => item !== fabric);
+      setSelected(selectedFabrics);
+      onFabricFilter(selectedFabrics);
     } else {
-      setSelected([...selected, material]);
-      onFabricFilter([...selected, material]);
+      const selectedFabrics = [...selected, fabric];
+      setSelected(selectedFabrics);
+      onFabricFilter(selectedFabrics);
     }
   };
 
