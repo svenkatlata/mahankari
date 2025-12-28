@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Outlet } from "react-router-dom";
 
 import { styled, useTheme } from "@mui/material/styles";
 import {
@@ -106,7 +106,7 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export default function Layout({ children }) {
+export default function Layout() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -191,7 +191,10 @@ export default function Layout({ children }) {
                     color: location.pathname === item.path ? "#4B7CF3" : "#444",
                     fontWeight: location.pathname === item.path ? 600 : 400,
                   },
-                  borderLeft: location.pathname === item.path ? "4px solid #4B7CF3" : "4px solid transparent",
+                  borderLeft:
+                    location.pathname === item.path
+                      ? "4px solid #4B7CF3"
+                      : "4px solid transparent",
                 }}
                 onClick={(e) => {
                   if (item.dropdown) {
@@ -237,7 +240,7 @@ export default function Layout({ children }) {
       {/* Main Content */}
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        {children}
+        <Outlet />
       </Box>
     </Box>
   );
