@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+    /* === BRAND COLOR PALETTE === */
+    --color-primary: #481133;
+    --color-topbar: #671e4b;
+    --color-accent: #ffc857;
+    --color-secondary: #fffcff;
+}
+
+body {
+    margin: 0;
+    background: white;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: #1e2939;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: var(--color-primary);
+}
